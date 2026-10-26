@@ -123,6 +123,105 @@ def founding_line(md_text, where):
     return re.sub(r"^\{\{FOUNDING_PRICE_LINE\}\}\s*$", "", md_text, flags=re.M)
 
 
+TIER_NOTE = "Written guides, no coding needed, works with any AI website builder."
+
+
+def guide_url():
+    """The House Guide link: with the founding offer code only while founding_price.enabled."""
+    fp = cfg.get("founding_price", {})
+    url = cfg["links"]["GUIDE_URL"]
+    if fp.get("enabled") and fp.get("code"):
+        url += ("&" if "?" in url else "?") + "offer_code=" + fp["code"]
+    return url
+
+
+def founding_text():
+    fp = cfg.get("founding_price", {})
+    if not fp.get("enabled"):
+        return None
+    t = f"{fp['price']} founding price for the first {fp['limit']} buyers"
+    return t + (f", code {fp['code']}" if fp.get("code") else "")
+
+
+TIERS = [
+    {"key": "guide", "name": "The House Guide", "price": "$39", "featured": True, "badge": "Most complete",
+     "points": ["20 modules, 102 written lessons", "126-page PDF + EPUB",
+                "Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI",
+                "Prompt library (18 prompts), troubleshooting playbook, build diary", "30-day refund"],
+     "button": "Get The House Guide"},
+    {"key": "quick", "name": "Quick Start", "price": "$19",
+     "points": ["7 modules, 39 written lessons", "55-page PDF + EPUB",
+                "Planning and content, the full performance module, publish, domain, backup, launch review",
+                "Prompt library (18 prompts)", "30-day refund"],
+     "button": "Get Quick Start", "link": "QUICKSTART_URL"},
+    {"key": "free", "name": "Performance Checklist", "price": "Free",
+     "points": ["12-item checklist", "The full 7-lesson performance module", "13-page PDF"],
+     "button": "Get the free checklist", "link": "CHECKLIST_URL"},
+]
+
+
+def tier_link(t):
+    return guide_url() if t["key"] == "guide" else cfg["links"][t["link"]]
+
+
+def tiers_block(heading="Build your own high-end site with AI", eyebrow="The guides", hid="guides"):
+    """Full 3-card pricing block, styled after the cards at the end of circularsurrealism.com/articles/the-house."""
+    e = html.escape
+    out = []
+    for t in TIERS:
+        ft = founding_text() if t["key"] == "guide" else None
+        if ft:
+            price = (f'<p class="tier-price"><span class="now">{e(cfg["founding_price"]["price"])}</span>'
+                     f'<s class="was" aria-label="regular price {e(t["price"])}">{e(t["price"])}</s></p>'
+                     f'<p class="tier-founding">{e(ft)}</p>')
+        else:
+            price = f'<p class="tier-price"><span class="now">{e(t["price"])}</span></p>'
+        badge = f'<span class="tier-badge">{e(t["badge"])}</span>' if t.get("badge") else ""
+        lis = "".join(f"<li>{e(x)}</li>" for x in t["points"])
+        cls = "tier featured" if t.get("featured") else "tier"
+        btn = "tier-btn primary" if t.get("featured") else "tier-btn"
+        out.append(f'<div class="{cls}"><div class="tier-top"><h3 class="tier-name">{e(t["name"])}</h3>{badge}</div>{price}'
+                   f'<ul class="tier-points">{lis}</ul>'
+                   f'<a class="{btn}" href="{e(tier_link(t))}" rel="noopener">{e(t["button"])}</a></div>')
+    return (f'<section class="tiers" id="{hid}" aria-labelledby="{hid}-h"><p class="tiers-eyebrow">{e(eyebrow)}</p>'
+            f'<h2 class="tiers-h" id="{hid}-h">{e(heading)}</h2>'
+            f'<div class="tier-grid">{out[0]}<div class="tier-pair">{out[1]}{out[2]}</div></div>'
+            f'<p class="tiers-note">{e(TIER_NOTE)}</p></section>')
+
+
+def tiers_bar():
+    """Compact version for the top of each article: one slim row, links straight to each product."""
+    e = html.escape
+    g, q, f = TIERS
+    ft = founding_text()
+    gprice = f'{cfg["founding_price"]["price"]} <s>{g["price"]}</s>' if ft else g["price"]
+    return (f'<aside class="tier-bar" aria-label="The guides"><span class="tb-label">The guides</span>'
+            f'<a class="tb-item tb-main" href="{e(tier_link(g))}" rel="noopener">{e(g["name"])} <b>{gprice}</b></a>'
+            f'<a class="tb-item" href="{e(tier_link(q))}" rel="noopener">{e(q["name"])} <b>{q["price"]}</b></a>'
+            f'<a class="tb-item" href="{e(tier_link(f))}" rel="noopener">Checklist <b>{f["price"]}</b></a>'
+            f'<a class="tb-more" href="#guides">Compare &darr;</a>'
+            + (f'<span class="tb-founding">{e(ft)}</span>' if ft else "") + '</aside>')
+
+
+def place_tiers(h):
+    """Slim bar after the 1st paragraph; full cards replace the link list (and founding line) under 'Go further'."""
+    ps = [m.end() for m in re.finditer(r"</p>", h)]
+    first_h2 = h.find("<h2")
+    cut = ps[0] if ps else 0
+    if first_h2 != -1 and cut > first_h2:
+        cut = first_h2
+    h = h[:cut] + "\n" + tiers_bar() + "\n" + h[cut:]
+    i = h.find('id="go-further"')
+    if i != -1:
+        rest = h[i:]
+        rest = re.sub(r'<p class="founding">.*?</p>', "", rest, count=1, flags=re.S)
+        new, n = re.subn(r"<ul>.*?</ul>", lambda m: tiers_block(), rest, count=1, flags=re.S)
+        if n:
+            return h[:i] + new
+    warnings.append("article has no 'Go further' link list; full tier cards appended at the end")
+    return h + tiers_block()
+
+
 def render_body(md_text, where):
     md_text = founding_line(md_text, where)
     md_text = re.sub(r"^- \[ \] ", "- \u2610 ", md_text, flags=re.M)
@@ -149,7 +248,7 @@ def render_body(md_text, where):
     h = re.sub(r'<a href="(https?://(?!guide\.circularsurrealism\.com)[^"]+)"', r'<a href="\1" rel="noopener"', h)
     # code blocks become prompt cards
     h = h.replace("<pre><code>", '<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>').replace("</code></pre>", "</code></pre></div>")
-    return h
+    return place_tiers(h)
 
 
 def head(title, desc, canonical, og_img, og_type="website", extra=""):
@@ -197,6 +296,7 @@ FOOT = f"""<footer class="site-footer"><div class="wrap">
 <p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="{cfg['art_site_url']}" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
 <p class="small">&copy; Slowfreeze · Circular Surrealism</p>
 </div></footer>
+<a class="tier-float" href="#guides" hidden>Guides from $19</a>
 <script src="/site.js" defer></script>
 </body></html>
 """
@@ -265,6 +365,8 @@ def build():
 <p class="dek">{html.escape(cfg['site_tagline'])}</p>
 <p>Every number here comes from the real build: the chat history, the code, or the author's own article. Nothing is invented, and load times were never measured, so you will not find "X seconds faster" claims.</p>
 </section>
+{tiers_block()}
+<h2 class="list-h">The articles</h2>
 <ul class="cards">
 {''.join(cards)}
 </ul>

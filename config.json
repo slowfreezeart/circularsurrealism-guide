@@ -21,6 +21,7 @@
     "limit": 50,
     "limit_confirmed_by_user": true,
     "template": "Founding price {price} for the first {limit} buyers.",
-    "_note": "One toggle: set enabled to false and rebuild to remove the line from every article. Limit of 50 relayed as user-confirmed via Consu on Oct 25, 2026."
+    "_note": "One toggle: set enabled to false and rebuild to remove the line from every article. Limit of 50 relayed as user-confirmed via Consu on Oct 25, 2026.",
+    "code": "FOUNDING50"
   }
 }

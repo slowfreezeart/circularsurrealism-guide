@@ -62,3 +62,44 @@ figcaption{font-size:14px;color:var(--muted);margin:10px 22px 0}
 nav,.brand{white-space:nowrap}
 @media(max-width:560px){body{font-size:16.5px}.brand{font-size:16px}.wordmark{font-size:16px}.brand em{display:none}nav a{margin-left:14px;font-size:14px}.dek{font-size:18px}}
 @media print{.site-header,.copy,.site-footer nav{display:none}body{background:#fff;color:#000}.prose p,.prose li{color:#000}}
+/* Guide tier cards: look copied from the cards at the end of circularsurrealism.com/articles/the-house (aureole theme tokens). */
+.tiers{margin:8px 0 56px;padding:22px 18px 18px;border-radius:14px;box-shadow:0 0 0 1px #e8c56a47,0 12px 36px #b482281f;background:#100d08;scroll-margin-top:80px}
+.tiers-eyebrow{margin:0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#9a8254}
+.tiers-h,.prose .tiers-h{font-family:"Syne","Segoe UI",sans-serif;font-weight:600;letter-spacing:-.04em;font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:6px 0 18px;padding:0;border:0;color:#f7edd4}
+.tier-grid{display:grid;gap:14px}
+.tier-pair{display:grid;gap:14px}
+@media(min-width:640px){.tier-pair{grid-template-columns:1fr 1fr}.tiers{padding:26px 22px 20px}}
+.tier{display:flex;flex-direction:column;border-radius:14px;padding:18px;box-shadow:0 0 0 1px #e8c56a47,0 12px 36px #b482281f;background:#0c0a06}
+.tier.featured{box-shadow:0 0 0 1px #f5e6b899,0 0 40px #e8c56a38;background:linear-gradient(#16120a,#0c0a06)}
+.tier-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.tier-name,.prose .tier-name{font-family:"Syne","Segoe UI",sans-serif;font-weight:600;letter-spacing:-.03em;font-size:21px;margin:0;color:#f7edd4}
+.tier-badge{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#1a1408;background:#e8c56a;border-radius:999px;padding:3px 10px;font-weight:600}
+.tier-price,.prose .tier-price{margin:10px 0 0;display:flex;align-items:baseline;gap:10px;color:#f7edd4}
+.tier-price .now{font-family:"Syne","Segoe UI",sans-serif;font-weight:600;font-size:34px;letter-spacing:-.03em;line-height:1;color:#e8c56a}
+.tier-price .was{font-size:18px;color:#9a8254}
+.tier-founding,.prose .tier-founding{margin:6px 0 0;font-size:13px;line-height:1.5;color:#d4bc82}
+.tier-points,.prose .tier-points{list-style:none;padding:0;margin:14px 0 0}
+.tier-points li,.prose .tier-points li{position:relative;padding-left:18px;margin:7px 0;font-size:15px;line-height:1.55;color:#d4bc82}
+.tier-points li:before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:#9a8254}
+.tier-btn{margin-top:auto;display:flex;min-height:44px;align-items:center;justify-content:center;border-radius:14px;padding:0 16px;font-size:15px;font-weight:500;text-decoration:none;color:#f7edd4;box-shadow:0 0 0 1px #e8c56a47;transition:background .15s}
+.tier-points+.tier-btn{margin-top:auto}.tier ul{margin-bottom:16px}
+.tier-btn:hover{background:#16120a;color:#f7edd4}
+.tier-btn.primary{background:#e8c56a;color:#1a1408;box-shadow:0 0 18px #e8c56a66}
+.tier-btn.primary:hover{background:#f0d488;color:#1a1408}
+.tiers-note,.prose .tiers-note{margin:14px 0 0;font-size:13px;line-height:1.5;color:#9a8254}
+.list-h{font-size:clamp(24px,3.2vw,30px);margin:0 0 18px}
+/* compact bar near the top of each article */
+.tier-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:26px 0;padding:12px 14px;border-radius:14px;box-shadow:0 0 0 1px #e8c56a47,0 12px 36px #b482281f;background:#100d08;font-size:14px;line-height:1.3}
+.tb-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9a8254;margin-right:2px}
+.tb-item{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border-radius:999px;text-decoration:none;color:#f7edd4;box-shadow:0 0 0 1px #e8c56a47}
+.tb-item b{color:#e8c56a;font-weight:600}.tb-item s{color:#9a8254;font-weight:400}
+.tb-item:hover{background:#16120a;color:#f7edd4}
+.tb-main{background:#e8c56a;color:#1a1408;box-shadow:none}.tb-main b{color:#1a1408}.tb-main s{color:#5a4a26}
+.tb-main:hover{background:#f0d488;color:#1a1408}
+.tb-more{margin-left:auto;color:#d4bc82;text-decoration:none;font-size:14px}.tb-more:hover{color:#f7edd4}
+.tb-founding{flex-basis:100%;font-size:12.5px;color:#9a8254}
+/* small floating jump button; shown by site.js only after scrolling past the first screen, hidden while the cards are visible */
+.tier-float{position:fixed;right:16px;bottom:16px;z-index:6;padding:10px 16px;border-radius:999px;background:#e8c56a;color:#1a1408;font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 6px 24px #0009,0 0 18px #e8c56a55;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none}
+.tier-float.on{opacity:1;transform:none;pointer-events:auto}
+.tier-float:hover{background:#f0d488;color:#1a1408}
+@media print{.tier-float,.tier-bar{display:none}}
