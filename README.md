@@ -22,7 +22,7 @@ The build prints any placeholders left in the HTML, any `[NEEDS FACT]` markers, 
   - `limit` (50) is not confirmed by the user yet. The build warns while `limit_confirmed_by_user` is false. There is no refund wording anywhere.
 
 ## What docs/ contains
-index, one `/<slug>/index.html` per article, 404, `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml`, `style.css`, `site.js` (copy buttons on prompts), `favicon.svg`, webp images (900/1600 px), and 1200x630 OG images.
+index, one `/<slug>/index.html` per article, 404, `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml`, `style.css`, `site.js` (copy buttons on prompts), favicons and apple-touch icon (copied byte-for-byte from circularsurrealism.com), webp images (900/1600 px), and 1200x630 OG images.
 Each page has a title, meta description, canonical, Open Graph and Twitter tags, and Article JSON-LD. No web fonts, analytics or third-party scripts.
 
 ## To go live (needs the user; not done)
