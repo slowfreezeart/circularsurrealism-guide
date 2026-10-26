@@ -1,0 +1,26 @@
+{
+  "site_name": "Circular Surrealism · Build Notes",
+  "site_tagline": "Free articles on building a high-end website with AI, from one real 396-prompt build: circularsurrealism.com.",
+  "hub_url": "https://guide.circularsurrealism.com",
+  "art_site_url": "https://circularsurrealism.com",
+  "author": "Slowfreeze",
+  "lang": "en",
+  "links": {
+    "GUIDE_URL": "https://slowfreezebuilds.gumroad.com/l/sjvavd",
+    "QUICKSTART_URL": "https://slowfreezebuilds.gumroad.com/l/kslwf",
+    "CHECKLIST_URL": "https://slowfreezebuilds.gumroad.com/l/svpmd"
+  },
+  "article_order": [
+    "how-to-build-a-website-with-ai",
+    "grok-build-publish-custom-domain-github",
+    "make-ai-built-website-load-faster"
+  ],
+  "founding_price": {
+    "enabled": true,
+    "price": "$29",
+    "limit": 50,
+    "limit_confirmed_by_user": true,
+    "template": "Founding price {price} for the first {limit} buyers.",
+    "_note": "One toggle: set enabled to false and rebuild to remove the line from every article. Limit of 50 relayed as user-confirmed via Consu on Oct 25, 2026."
+  }
+}

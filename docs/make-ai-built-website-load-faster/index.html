@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Slow on Mobile? 8 Fixes for AI-Built Image &amp; Video Sites</title>
+<meta name="description" content="AI-built site slow or crashing on phones? 8 fixes from a real media-heavy build: card-size webp, 720p video loops, off-screen pause and lighter publishes.">
+<link rel="canonical" href="https://guide.circularsurrealism.com/make-ai-built-website-load-faster/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Circular Surrealism · Build Notes">
+<meta property="og:title" content="Website Slow on Mobile? 8 Fixes for AI-Built Image &amp; Video Sites">
+<meta property="og:description" content="AI-built site slow or crashing on phones? 8 fixes from a real media-heavy build: card-size webp, 720p video loops, off-screen pause and lighter publishes.">
+<meta property="og:url" content="https://guide.circularsurrealism.com/make-ai-built-website-load-faster/">
+<meta property="og:image" content="https://guide.circularsurrealism.com/assets/og/make-ai-built-website-load-faster.jpg">
+<meta name="twitter:image" content="https://guide.circularsurrealism.com/assets/og/make-ai-built-website-load-faster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website Slow on Mobile? 8 Fixes for AI-Built Image &amp; Video Sites">
+<meta name="twitter:description" content="AI-built site slow or crashing on phones? 8 fixes from a real media-heavy build: card-size webp, 720p video loops, off-screen pause and lighter publishes.">
+<meta name="theme-color" content="#0d0b08">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why your AI-built website is slow on mobile, and 8 fixes for image and video heavy sites", "description": "AI-built site slow or crashing on phones? 8 fixes from a real media-heavy build: card-size webp, 720p video loops, off-screen pause and lighter publishes.", "mainEntityOfPage": "https://guide.circularsurrealism.com/make-ai-built-website-load-faster/", "author": {"@type": "Person", "name": "Slowfreeze", "url": "https://circularsurrealism.com"}, "publisher": {"@type": "Organization", "name": "Circular Surrealism", "url": "https://circularsurrealism.com"}, "image": "https://guide.circularsurrealism.com/assets/og/make-ai-built-website-load-faster.jpg"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><span class="seal" aria-hidden="true"></span><span>Circular Surrealism <em>Build Notes</em></span></a>
+<nav><a href="/">Articles</a><a href="https://circularsurrealism.com" rel="noopener">The site</a></nav>
+</div></header>
+<main id="main" class="wrap article">
+<p class="eyebrow"><a href="/">Build Notes</a> · Case study: circularsurrealism.com</p>
+<h1>Why your AI-built website is slow on mobile, and 8 fixes for image and video heavy sites</h1>
+<p class="dek">AI-built site slow or crashing on phones? 8 fixes from a real media-heavy build: card-size webp, 720p video loops, off-screen pause and lighter publishes.</p>
+<div class="prose">
+<p>An AI builder will happily put your original files everywhere: a 4K video in a small card, a 31 MB image in a thumbnail, a mosaic of hundreds of full-size images on the homepage. The site works on your computer. On a phone it feels heavy, and it can crash.</p>
+<p>That is what happened to <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, a media-heavy artist site built with Grok Build. It was "done": every page existed. Then it took its own stretch of work, mostly 16 to 21 September 2026, to make it light. This article is that fix, step by step, with the prompts. It applies to any AI-built or "vibe coded" site with lots of images or video.</p>
+<p>A note on honesty: load times were never measured in that build, so there are no "X seconds faster" claims here. Measure your own site before and after (a phone screen recording, or the Lighthouse report in Chrome's developer tools).</p>
+<h2 id="why-is-your-website-slow-on-mobile">Why is your website slow on mobile?</h2>
+<p>On a media-heavy AI-built site, the usual reason is simple: small spaces are loading big files. A phone has less memory and often a slower connection than the computer you build on, so a page that pulls dozens of originals at once can stall or crash there first.</p>
+<p>The rule that fixed it:</p>
+<blockquote>
+<p>Small files where things are small. Originals only when someone asks for them.</p>
+</blockquote>
+<p>Every fix below is that one rule applied to a different part of the site.</p>
+<figure><img src="/assets/img/s4-before-after-media-1600.webp" srcset="/assets/img/s4-before-after-media-900.webp 900w, /assets/img/s4-before-after-media-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="728" alt="Before: 4K video and full originals on every card. After: 720p loops and card-size webp, originals only when opened" decoding="async"><figcaption>Before: 4K video and full originals on every card. After: 720p loops and card-size webp, originals only when opened</figcaption></figure>
+<h2 id="1-move-heavy-features-off-the-homepage">1. Move heavy features off the homepage</h2>
+<p>The site's mosaic ("The Wall") sat on the homepage, and the homepage sometimes crashed on mobile. The fix: keep a sentence and a button on the homepage and load the mosaic only on its own page. The same idea later moved the long sales history behind an "Open ledger" button.</p>
+<figure><img src="/assets/img/s4-door-pattern-1600.webp" srcset="/assets/img/s4-door-pattern-900.webp 900w, /assets/img/s4-door-pattern-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="766" alt="Heavy feature behind a door: a homepage teaser and a button that opens its own page" decoding="async" loading="lazy"><figcaption>Heavy feature behind a door: a homepage teaser and a button that opens its own page</figcaption></figure>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Keep the intro to [feature] on the homepage with a button to enter, and load it only on its own page, because the homepage is crashing on mobile. Do the same for any long list: show the first few and put the rest behind a button.
+</code></pre></div>
+<p>Check the moved feature right away. In the case study, the mosaic's tiles were invisible on the new page at first.</p>
+<h2 id="2-optimize-video-for-cards-light-loops-not-4k">2. Optimize video for cards: light loops, not 4K</h2>
+<p>4K animations were playing on small cards. The fix: a 720p loop for every card, with the original 4K only on the homepage hero and when someone opens the item. One video was too heavy even as a loop, so its card shows a still, and the motion plays only when it is opened.</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Use 720p video for every card. Keep 4K only on the hero and when an item is opened. If a video is still too heavy for a card, show its still image on the card and play the video only when the item is opened.
+</code></pre></div>
+<h2 id="3-make-images-load-faster-with-card-size-webp">3. Make images load faster with card-size webp</h2>
+<p>Then the same for still images. Cards now load a sharp webp of about 960 pixels wide, while the hero and the opened item keep the original. One card image had been a 31 MB PNG. It became about 40 KB.</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Check which cards load the original image files. Give every card a sharp card-size image (around 960 px wide, webp) and keep the original only for the hero and when the item is opened. Check category cover cards and homepage rows too.
+</code></pre></div>
+<p>Ask for a list of every card type. In the case study, collection cover cards were missed the first time and were still loading originals.</p>
+<h2 id="4-pause-lazy-load-video-when-it-is-off-screen">4. Pause (lazy load) video when it is off screen</h2>
+<p>Once every card had a light loop, the next step was to play only what visitors can see. Each video watches whether it is on screen (the browser's IntersectionObserver) and plays only when visible. The long timeline page plays one video at a time and unloads it when you move on.</p>
+<figure><img src="/assets/img/s4-offscreen-video-1600.webp" srcset="/assets/img/s4-offscreen-video-900.webp 900w, /assets/img/s4-offscreen-video-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="1162" alt="Videos play only while visible on screen and pause when scrolled away" decoding="async" loading="lazy"><figcaption>Videos play only while visible on screen and pause when scrolled away</figcaption></figure>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Make every video play only while it is visible on screen and pause when it scrolls away. On [long page], play only one video at a time and unload it when the visitor moves on.
+</code></pre></div>
+<p>Side effect to watch: on a computer, the sound kept muting itself a couple of seconds after the visitor unmuted, because the video re-buffered. Rule: if a visitor asks for sound, it stays on until they turn it off.</p>
+<h2 id="5-big-image-grids-need-tiny-tiles">5. Big image grids need tiny tiles</h2>
+<p>The mosaic was the same lesson at a larger scale: about 500 tiles, each loading an original file into a cell only about 12 pixels wide. The phone gave up when the mosaic approached 120 to 130 tiles, sometimes as early as 90. The fix: each tile became a 128 px webp, shown small, loading six at a time. Hover, zoom and tap-to-open all still work.</p>
+<figure><img src="/assets/img/s5-wall-1600.webp" srcset="/assets/img/s5-wall-900.webp 900w, /assets/img/s5-wall-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="1426" alt="The Wall mosaic on desktop and phone, each tile a small webp" decoding="async" loading="lazy"><figcaption>The Wall mosaic on desktop and phone, each tile a small webp</figcaption></figure>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>The [grid] crashes after about [N] tiles because it loads the original files. Make each tile a tiny webp (128 px), load a few at a time, and keep the tap that opens the full item.
+</code></pre></div>
+<h2 id="6-know-your-publish-weight">6. Know your publish weight</h2>
+<p>The first publish with the new light loops carried 86 videos, about 120 MB. It sat on "Deploying", failed, and the light videos never reached the live site, even though the preview had them. Shipping light loops only for the heaviest pieces, 25 files and about 34 MB, went through.</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Before I publish, tell me how many media files and how many MB this publish adds. Keep light versions only for the heaviest files, and remove anything in the project the site does not use.
+</code></pre></div>
+<p>If the preview has something the live site does not, the publish did not finish. More on this in <a href="/grok-build-publish-custom-domain-github/">the Grok Build publish guide</a>.</p>
+<h2 id="7-never-leave-a-dead-tap-or-a-blank-hole">7. Never leave a dead tap or a blank hole</h2>
+<p>"When a tap feels dead, it is not always slow. Sometimes it is silent." A small loading animation when the menu is tapped, and a placeholder that holds the space of an image while it loads, make a site feel faster even before it is.</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>When someone taps the menu or a link and it is still loading, show a small loading animation. While a card or hero image is loading, hold its space with a subtle placeholder instead of a blank hole.
+</code></pre></div>
+<h2 id="8-zoom-the-real-file-not-a-bigger-thumbnail">8. Zoom the real file, not a bigger thumbnail</h2>
+<p>If your site has a zoom view, check which file it zooms. In the case study, two collections were opening 1,600-pixel copies from a marketplace image service instead of the real files. One true original was 5,760 × 7,200 pixels, about 51 MB. A tile pyramid was tried, published, and removed because the tile edges showed. What worked: small file on the card, real original only when someone opens the zoom, with a placeholder holding the frame while it loads.</p>
+<h2 id="the-pre-publish-performance-checklist">The pre-publish performance checklist</h2>
+<ul>
+<li>☐ No heavy feature loads on the homepage; each has a teaser and a button</li>
+<li>☐ Long lists behind a "Show all" button</li>
+<li>☐ Card videos are light (for example 720p); originals only on the hero and opened items</li>
+<li>☐ Very heavy videos show a still on the card</li>
+<li>☐ Card images are card-size webp; originals only when opened</li>
+<li>☐ Every card type checked</li>
+<li>☐ Off-screen videos pause; long pages play one at a time</li>
+<li>☐ Publish size known; unused files removed</li>
+<li>☐ Every tap gives feedback; images hold their space</li>
+<li>☐ Tested on a real phone</li>
+<li>☐ Measured before and after</li>
+</ul>
+<p>Get it as a printable: <a href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">free performance checklist</a>.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="why-does-my-site-work-on-desktop-but-crash-on-my-phone">Why does my site work on desktop but crash on my phone?</h3>
+<p>Phones have less memory. A page that loads many original images or videos at once can run out on a phone long before it does on a computer, as the mosaic in this case study did.</p>
+<h3 id="what-size-should-images-be-on-a-website-card">What size should images be on a website card?</h3>
+<p>The case study used webp images about 960 px wide for cards and kept the originals for the hero and the opened item. Tiny mosaic tiles used 128 px webp.</p>
+<h3 id="will-these-fixes-make-my-site-faster-by-a-specific-number-of-seconds">Will these fixes make my site faster by a specific number of seconds?</h3>
+<p>This build never measured load times, so no number is promised. Measure your own site before and after.</p>
+<h2 id="go-further">Go further</h2>
+<p>The performance overhaul is one module of <strong>The House Guide</strong>, the written path of the whole 396-prompt build. <strong>Quick Start</strong> ($19) includes it together with the foundation and publishing.</p>
+<ul>
+<li><a href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Quick Start, $19</a></li>
+<li><a href="https://slowfreezebuilds.gumroad.com/l/sjvavd" rel="noopener">The House Guide, $39</a></li>
+</ul>
+<p class="founding">Founding price $29 for the first 50 buyers.</p>
+
+<p><em>Built with Grok. The case-study site was built with Grok Build by xAI. This article and the guides are independent and are not made, endorsed or sponsored by xAI.</em></p>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
+<p class="small">&copy; Slowfreeze · Circular Surrealism</p>
+</div></footer>
+<script src="/site.js" defer></script>
+</body></html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Build: Publish, Custom Domain &amp; GitHub Backup (Guide)</title>
+<meta name="description" content="Publish a Grok Build app, connect a custom domain, export to GitHub, fix a publish stuck on Deploying, and recover a lost preview. From a real build.">
+<link rel="canonical" href="https://guide.circularsurrealism.com/grok-build-publish-custom-domain-github/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Circular Surrealism · Build Notes">
+<meta property="og:title" content="Grok Build: Publish, Custom Domain &amp; GitHub Backup (Guide)">
+<meta property="og:description" content="Publish a Grok Build app, connect a custom domain, export to GitHub, fix a publish stuck on Deploying, and recover a lost preview. From a real build.">
+<meta property="og:url" content="https://guide.circularsurrealism.com/grok-build-publish-custom-domain-github/">
+<meta property="og:image" content="https://guide.circularsurrealism.com/assets/og/grok-build-publish-custom-domain-github.jpg">
+<meta name="twitter:image" content="https://guide.circularsurrealism.com/assets/og/grok-build-publish-custom-domain-github.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Build: Publish, Custom Domain &amp; GitHub Backup (Guide)">
+<meta name="twitter:description" content="Publish a Grok Build app, connect a custom domain, export to GitHub, fix a publish stuck on Deploying, and recover a lost preview. From a real build.">
+<meta name="theme-color" content="#0d0b08">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Grok Build publish guide: custom domain, GitHub backup, and recovering a lost preview", "description": "Publish a Grok Build app, connect a custom domain, export to GitHub, fix a publish stuck on Deploying, and recover a lost preview. From a real build.", "mainEntityOfPage": "https://guide.circularsurrealism.com/grok-build-publish-custom-domain-github/", "author": {"@type": "Person", "name": "Slowfreeze", "url": "https://circularsurrealism.com"}, "publisher": {"@type": "Organization", "name": "Circular Surrealism", "url": "https://circularsurrealism.com"}, "image": "https://guide.circularsurrealism.com/assets/og/grok-build-publish-custom-domain-github.jpg"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><span class="seal" aria-hidden="true"></span><span>Circular Surrealism <em>Build Notes</em></span></a>
+<nav><a href="/">Articles</a><a href="https://circularsurrealism.com" rel="noopener">The site</a></nav>
+</div></header>
+<main id="main" class="wrap article">
+<p class="eyebrow"><a href="/">Build Notes</a> · Case study: circularsurrealism.com</p>
+<h1>Grok Build publish guide: custom domain, GitHub backup, and recovering a lost preview</h1>
+<p class="dek">Publish a Grok Build app, connect a custom domain, export to GitHub, fix a publish stuck on Deploying, and recover a lost preview. From a real build.</p>
+<div class="prose">
+<p>These are the steps used to put <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a> online with Grok Build, and the problems that came up along the way. The site was built in one conversation over about 8 weeks and 396 prompts. Screens and button names can change as Grok Build updates; the order of operations is what matters.</p>
+<h2 id="the-three-pieces-you-own">The three pieces you own</h2>
+<p>Keep these apart in your head:</p>
+<ol>
+<li><strong>The domain name.</strong> Yours as long as you renew it at your registrar.</li>
+<li><strong>The live site.</strong> That is the publish. It stays up through Grok Build.</li>
+<li><strong>The files.</strong> Yours once they are exported to GitHub.</li>
+</ol>
+<p>The domain alone is not the website. The website alone is not your name. You want all three.</p>
+<figure><img src="/assets/img/e2-three-pieces-1600.webp" srcset="/assets/img/e2-three-pieces-900.webp 900w, /assets/img/e2-three-pieces-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="661" alt="Domain, live site and files: the three pieces of an AI-built website you should own" decoding="async"><figcaption>Domain, live site and files: the three pieces of an AI-built website you should own</figcaption></figure>
+<h2 id="step-1-publish-your-grok-build-app-first">Step 1: Publish your Grok Build app first</h2>
+<p>Publish the site so it exists on its grok.me address before anything else. That published app is what your domain will point to. Do not try to attach a domain to a project that has never been published.</p>
+<p>Publish in chapters: when a group of pages is right, publish. You do not need a final version.</p>
+<h3 id="grok-build-publish-stuck-on-deploying-or-failing">Grok Build publish stuck on "Deploying" or failing?</h3>
+<p>What caused it in the case study, and what fixed it:</p>
+<ul>
+<li><strong>Too much media in one publish.</strong> A publish with 86 videos (about 120 MB) sat on "Deploying" and then failed. Shipping only 25 files (about 34 MB) worked.</li>
+<li><strong>Files the site never used.</strong> Another failure turned out to include about 110 MB of old screenshots and a leftover build. Removing them fixed it.</li>
+<li><strong>A required security update.</strong> Once, publishing was refused until a framework security update was applied (1 to 2 October 2026 in this build).</li>
+<li><strong>Double publishing.</strong> Do not tap Publish again while one is still deploying. Wait for it to finish or fail.</li>
+</ul>
+<p>If the preview has something the live site does not, the publish did not finish.</p>
+<figure><img src="/assets/img/s4-publish-weight-1600.webp" srcset="/assets/img/s4-publish-weight-900.webp 900w, /assets/img/s4-publish-weight-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="865" alt="86 videos (about 120 MB) stuck on Deploying; 25 files (about 34 MB) published" decoding="async" loading="lazy"><figcaption>86 videos (about 120 MB) stuck on Deploying; 25 files (about 34 MB) published</figcaption></figure>
+<p><strong>Prompt:</strong></p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Before I publish, tell me how many files and MB this publish adds, and remove anything the site does not use (old screenshots, leftover builds).
+</code></pre></div>
+<h2 id="step-2-connect-a-custom-domain-you-already-own">Step 2: Connect a custom domain you already own</h2>
+<p>Grok Build does not sell domains. Buy one at any registrar (the case study used Namecheap), then:</p>
+<ol>
+<li>Open the Publish / project sheet (the one with the URL, access and cover).</li>
+<li>Choose custom domain.</li>
+<li>Type your domain exactly, for example <code>yourname.com</code>.</li>
+<li>Grok Build shows you DNS records, usually a CNAME or an A record. Copy them.</li>
+<li>At your registrar, open the DNS settings for the domain, paste the records, save.</li>
+<li>Wait. It can take minutes or a few hours. "Not Secure" in the address bar at this stage only means the security certificate is still being issued.</li>
+</ol>
+<p>After that, every Publish updates your domain. You do not redo DNS.</p>
+<figure><img src="/assets/img/e2-domain-records-1600.webp" srcset="/assets/img/e2-domain-records-900.webp 900w, /assets/img/e2-domain-records-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="814" alt="The builder shows DNS records, you paste them at the registrar, wait for the padlock, and redirect www" decoding="async" loading="lazy"><figcaption>The builder shows DNS records, you paste them at the registrar, wait for the padlock, and redirect www</figcaption></figure>
+<h3 id="why-www-doesnt-work-and-the-fix">Why www doesn't work (and the fix)</h3>
+<p>In the case study, the bare domain worked before <code>www</code> did. The domain had been entered without <code>www</code>, so only the bare domain got a certificate; <code>www</code> is a second hostname. The fix was a redirect at the registrar from <code>www</code> to <code>https://yourdomain.com/</code>. Share the bare domain everywhere; the redirect is the safety net.</p>
+<h2 id="step-3-export-your-grok-build-project-to-github-do-this-early">Step 3: Export your Grok Build project to GitHub (do this early)</h2>
+<p>Export is not the live site. It is a copy of all the files in a GitHub repository you own. GitHub is free.</p>
+<ol>
+<li>Make a free account at github.com.</li>
+<li>In the same project, open the Publish / project menu.</li>
+<li>Choose Export to GitHub, sign in, and allow it to create a repository.</li>
+<li>Name it something you will recognize. Private is fine for a backup.</li>
+<li>Export again whenever a chapter is done, so the backup is not months behind.</li>
+</ol>
+<p>If you are on a phone and cannot find the button, open the same account on a computer. The Publish sheet is easier to see there.</p>
+<h2 id="step-4-lost-the-preview-restore-from-the-live-site-dont-start-over">Step 4: Lost the preview? Restore from the live site, don't start over</h2>
+<p>Early in this build (2 to 4 September), the preview was lost. After a session that added themes, the preview would not load, and then the editing workspace had been wiped. The live domain was still up. The builder started rebuilding, and the rebuild came back missing features (sold marks, marketplace connections, whole sections). About $5 of credits went into that before the approach changed.</p>
+<p>The first instinct is to rebuild from a blank chat. Do not. The published site is the source of truth.</p>
+<figure><img src="/assets/img/e2-restore-from-live-1600.webp" srcset="/assets/img/e2-restore-from-live-900.webp 900w, /assets/img/e2-restore-from-live-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="670" alt="Lost preview: point the builder at the live URL, compare page by page, keep building" decoding="async" loading="lazy"><figcaption>Lost preview: point the builder at the live URL, compare page by page, keep building</figcaption></figure>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>This is my live site: [your URL]. Restore the preview from it, keep every page, text and setting as it is live, compare every page and tell me what is missing before you change anything.
+</code></pre></div>
+<p>Then reconnect the domain if needed (the name does not vanish because a conversation did), and export to GitHub as soon as the preview is back.</p>
+<p><strong>Watch for:</strong> during the recovery in the case study, empty media addresses made pages hang. Ask the builder to check for empty image and video links after a restore.</p>
+<h2 id="step-5-one-site-one-conversation">Step 5: One site, one conversation</h2>
+<p>Keep every edit for one site in one thread. Edits stack, and connections you already set (domain, data sources) stay. A different site gets a new conversation. Mixing a side project into the main thread risks the main site.</p>
+<h2 id="checklist-before-you-share-the-link">Checklist before you share the link</h2>
+<ul>
+<li>☐ Published at least once on the grok.me address</li>
+<li>☐ Domain connected and <code>www</code> redirects</li>
+<li>☐ Exported to GitHub, and re-exported after the latest chapter</li>
+<li>☐ I know the size of each media-heavy publish</li>
+<li>☐ I know how to restore from the live URL</li>
+</ul>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-grok-build-sell-domains">Does Grok Build sell domains?</h3>
+<p>No. You buy the domain from a registrar and paste the DNS records Grok Build shows you into the registrar's DNS settings.</p>
+<h3 id="how-long-does-a-custom-domain-take-to-connect">How long does a custom domain take to connect?</h3>
+<p>In this build it was minutes to a few hours. Until the certificate is issued, the browser may show "Not Secure".</p>
+<h3 id="is-export-to-github-the-same-as-publishing">Is Export to GitHub the same as publishing?</h3>
+<p>No. Publishing puts the site live. Export copies the files to a repository you own, as a backup.</p>
+<h2 id="go-further">Go further</h2>
+<p>The full build, with every step from the first prompt to a fast, finished site, is written up in <strong>The House Guide</strong>. <strong>Quick Start</strong> covers exactly this part (foundation, performance, publishing, recovery) in 39 lessons.</p>
+<ul>
+<li><a href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Free performance checklist</a></li>
+<li><a href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Quick Start, $19</a></li>
+<li><a href="https://slowfreezebuilds.gumroad.com/l/sjvavd" rel="noopener">The House Guide, $39</a></li>
+</ul>
+<p class="founding">Founding price $29 for the first 50 buyers.</p>
+
+<p><em>Built with Grok. The case-study site was built with Grok Build by xAI. This article and the guides are independent and are not made, endorsed or sponsored by xAI.</em></p>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
+<p class="small">&copy; Slowfreeze · Circular Surrealism</p>
+</div></footer>
+<script src="/site.js" defer></script>
+</body></html>
