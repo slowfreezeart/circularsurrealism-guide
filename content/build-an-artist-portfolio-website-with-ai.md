@@ -16,9 +16,9 @@ og_image: "visuals/s3-rooms.png"
 status: draft
 ---
 
-Most artist portfolio websites end up as one of three things: a nicer link page, a marketplace profile pretending to be a museum, or a grid that falls apart when you add video. The artist behind [circularsurrealism.com](https://circularsurrealism.com) wanted none of them: "Not a Linktree. Not a grid that dies when you add video."
+Most artist portfolio websites end up as one of three things: a nicer link page, a marketplace profile pretending to be a museum, or a grid that falls apart when you add video. The AI artist behind [circularsurrealism.com](https://circularsurrealism.com) wanted none of them: "Not a Linktree. Not a grid that dies when you add video."
 
-This article is how that portfolio and AI art archive was built. Slowfreeze, an artist working with AI since 2022, vibe coded it with AI in Grok Build over about 8 weeks and 396 prompts, by describing it, checking the live preview, and sending screenshots until it was right. The site now holds 439 works in 27 collections across four chains, with live listings, a sales ledger, a print shop, a gallery and a zoom view. That makes it an AI art archive as much as a portfolio: a portfolio shows a selection of the best pieces, while this site keeps every work, each with its collection, year, edition and the links to where it can be bought. The examples are from an AI and on-chain artist, but the structure fits any artist with a body of work spread across platforms: painters, photographers, illustrators, musicians.
+This article is how that portfolio and AI art archive was built. Slowfreeze, an AI artist since 2022, vibe coded it with AI in Grok Build over about 8 weeks and 396 prompts, by describing it, checking the live preview, and sending screenshots until it was right. The site now holds 439 works in 27 collections across four chains, with live listings, a sales ledger, a print shop, a gallery and a zoom view. That makes it an AI art archive as much as a portfolio: a portfolio shows a selection of the best pieces, while this site keeps every work, each with its collection, year, edition and the links to where it can be bought. The examples are from an AI and on-chain artist, but the structure fits any artist with a body of work spread across platforms: painters, photographers, illustrators, musicians.
 
 ![Collection rooms and the prints room on circularsurrealism.com](visuals/s3-rooms.png)
 
@@ -104,7 +104,7 @@ At one point the top bar had 11 items, a lot on a phone. The main rooms stayed i
 
 ## Step 8: Write the story pages yourself
 
-The builder can lay out About and Process. The words should be yours. On the case-study site, Process exists "so nobody leaves thinking a prompt is the piece," and it ends with links to Available, All works and Collect, "because after the method, a person should be able to take a piece home." Exhibitions shows the real show the work was in (Art Den, New York, April 3–4, 2024), with photos.
+The builder can lay out About and Process. The words should be yours. On the case-study site, Process exists "so nobody leaves thinking a prompt is the piece," and it ends with links to Available, All works and Collect, "because after the method, a person should be able to take a piece home." Exhibitions shows the real show the AI art was in (Art Den, New York, April 3–4, 2024), with photos.
 
 ## Step 9: Check how a single work looks when shared
 

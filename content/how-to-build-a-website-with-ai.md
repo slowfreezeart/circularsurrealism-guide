@@ -18,7 +18,7 @@ status: draft
 
 Most "build a website with AI" tutorials end after the first ten minutes: you type a sentence, a landing page appears, done. That is a real site, but it is rarely a high-end one, and it often looks like every other AI-built site. A high-end site knows your content, has rooms with clear jobs, opens fast on a phone, and keeps working after you stop touching it.
 
-This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an artist's museum-style site vibe coded with AI by one person in Grok Build. It took about 8 weeks and 396 prompts, from 27 August to 23 October 2026. The site holds 439 works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
+This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an AI artist's museum-style site vibe coded with AI by one person in Grok Build. It took about 8 weeks and 396 prompts, from 27 August to 23 October 2026. The site holds 439 works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
 
 ![The AI builder loop: talk, it builds, check the live preview, say what is wrong, publish](visuals/f1-builder-loop.png)
 
@@ -110,7 +110,7 @@ Be honest with yourself about time. This site took about 8 weeks and 396 prompts
 
 ### Do I need to know how to code to build a website with AI?
 
-No. The case-study site was built by an artist who is not a developer, entirely by describing what they wanted and reacting to the live preview.
+No. The case-study site was built by an AI artist who is not a developer, entirely by describing what they wanted and reacting to the live preview.
 
 ### Why does every AI website look the same?
 
@@ -118,7 +118,7 @@ Because the builder fills every gap with its defaults. Bring your own content, y
 
 ### Does this method only work for artists?
 
-No. The case study is an art site, but the same structure (inventory, one page per item, category pages, a homepage that is a door) fits a freelancer portfolio or a small business site.
+No. The case study is an AI art site, but the same structure (inventory, one page per item, category pages, a homepage that is a door) fits a freelancer portfolio or a small business site.
 
 ## Go further
 
