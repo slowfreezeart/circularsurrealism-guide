@@ -272,6 +272,7 @@ def head(title, desc, canonical, og_img, og_type="website", extra=""):
 <meta name="twitter:title" content="{e(title)}">
 <meta name="twitter:description" content="{e(desc)}">
 <meta name="theme-color" content="#0d0b08">
+<meta name="p:domain_verify" content="8b572280ec21d7344ce35e3d0566f415"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
