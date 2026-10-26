@@ -123,7 +123,7 @@ def founding_line(md_text, where):
     return re.sub(r"^\{\{FOUNDING_PRICE_LINE\}\}\s*$", "", md_text, flags=re.M)
 
 
-TIER_NOTE = "Written guides, no coding needed, works with any AI website builder."
+TIER_NOTE = "Written guides, no coding experience necessary, works with any AI website builder."
 
 
 def guide_url():
@@ -325,6 +325,7 @@ def build():
     arts = {p.stem: parse(p) for p in CONTENT.glob("*.md") if p.name.lower() != "readme.md"}
     order = [s for s in cfg["article_order"] if s in arts] + sorted(s for s in arts if s not in cfg["article_order"])
     cards = []
+    lastmods = {}
     for slug in order:
         a = arts[slug]
         assert a["slug"] == slug, f"slug mismatch in {slug}.md"
@@ -338,6 +339,13 @@ def build():
               "publisher": {"@type": "Organization", "name": "Circular Surrealism", "url": cfg["art_site_url"]}}
         if og:
             ld["image"] = og
+        # Dates come only from front matter (filled from git history); never guessed.
+        for key, field in (("datePublished", "published"), ("dateModified", "updated")):
+            if a.get(field):
+                ld[key] = str(a[field])
+            else:
+                warnings.append(f"{slug}: no '{field}:' in front matter, {key} left out")
+        lastmods[f"{HUB}/{slug}/"] = str(a.get("updated") or a.get("published") or "") or None
         extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
         page = head(a["title"], a["description"], canonical, og, "article", extra)
         page += f"""<main id="main" class="wrap article">
@@ -357,8 +365,12 @@ def build():
         cards.append(f'<li class="card"><a href="/{slug}/">{img}<div><h2>{html.escape(a["h1"])}</h2><p>{html.escape(a["description"])}</p><span class="more">Read the article →</span></div></a></li>')
 
     idx_desc = cfg["site_tagline"][:155]
+    site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": cfg["site_name"],
+               "url": f"{HUB}/", "inLanguage": cfg["lang"],
+               "publisher": {"@type": "Person", "name": cfg["author"], "url": cfg["art_site_url"]}}
     page = head("Build a High-End Website with AI — Build Notes", idx_desc, f"{HUB}/",
-                og_image(Path(arts[order[0]]["og_image"]).name, "home") if order else None)
+                og_image(Path(arts[order[0]]["og_image"]).name, "home") if order else None,
+                extra=f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
     page += f"""<main id="main" class="wrap home">
 <section class="intro">
 <p class="eyebrow">Free articles</p>
@@ -382,7 +394,12 @@ def build():
 
     urls = [f"{HUB}/"] + [f"{HUB}/{s}/" for s in order]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    sm += "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls) + "</urlset>\n"
+    # Home lastmod: its own last change (config "home_updated", from git) or the newest article, whichever is later.
+    # ISO 8601 strings with the same offset compare correctly as text.
+    home = [d for d in [cfg.get("home_updated")] + list(lastmods.values()) if d]
+    lastmods[f"{HUB}/"] = max(home) if home else None
+    sm += "".join(f"  <url><loc>{u}</loc>" + (f"<lastmod>{lastmods[u]}</lastmod>" if lastmods.get(u) else "") + "</url>\n"
+                  for u in urls) + "</urlset>\n"
     (OUT / "sitemap.xml").write_text(sm)
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {HUB}/sitemap.xml\n")
 

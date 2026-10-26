@@ -13,6 +13,8 @@ secondary_keywords:
 canonical: "{{HUB_URL}}/grok-build-lost-preview-recovery/"
 og_image: "visuals/e2-restore-from-live.png"
 status: draft
+published: "2026-10-26T01:48:06-05:00"
+updated: "2026-10-26T02:56:53-05:00"
 ---
 
 You open the conversation where your site lives and the preview will not load. Or it loads, and half of what you built is missing. Your first instinct is to ask the builder to rebuild it. In the case study behind this article, that instinct cost credits and a long night.

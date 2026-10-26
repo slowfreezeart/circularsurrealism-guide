@@ -14,6 +14,8 @@ canonical: "{{HUB_URL}}/how-to-build-a-website-with-ai/"
 og_image: "visuals/f1-builder-loop.png"
 replaces_draft: "../01-build-a-high-end-website-with-ai.md"
 status: draft
+published: "2026-10-26T00:27:52-05:00"
+updated: "2026-10-26T02:56:53-05:00"
 ---
 
 Most "build a website with AI" tutorials end after the first ten minutes: you type a sentence, a landing page appears, done. That is a real site, but it is rarely a high-end one, and it often looks like every other AI-built site. A high-end site knows your content, has rooms with clear jobs, opens fast on a phone, and keeps working after you stop touching it.

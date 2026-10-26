@@ -14,6 +14,8 @@ canonical: "{{HUB_URL}}/make-ai-built-website-load-faster/"
 og_image: "visuals/s4-before-after-media.png"
 replaces_draft: "../03-make-an-ai-built-website-fast.md"
 status: draft
+published: "2026-10-26T00:27:52-05:00"
+updated: "2026-10-26T02:56:53-05:00"
 ---
 
 An AI builder will happily put your original files everywhere: a 4K video in a small card, a 31 MB image in a thumbnail, a mosaic of hundreds of full-size images on the homepage. The site works on your computer. On a phone it feels heavy, and it can crash.
