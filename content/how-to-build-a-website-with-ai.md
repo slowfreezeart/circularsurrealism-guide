@@ -18,7 +18,7 @@ status: draft
 
 Most "build a website with AI" tutorials end after the first ten minutes: you type a sentence, a landing page appears, done. That is a real site, but it is rarely a high-end one, and it often looks like every other AI-built site. A high-end site knows your content, has rooms with clear jobs, opens fast on a phone, and keeps working after you stop touching it.
 
-This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an artist's museum-style site built by one person with an AI builder (Grok Build) and no coding. It took about 8 weeks and 396 prompts, from 27 August to 23 October 2026. The site holds 439 works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
+This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an artist's museum-style site vibe coded with AI by one person in Grok Build. It took about 8 weeks and 396 prompts, from 27 August to 23 October 2026. The site holds 439 works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
 
 ![The AI builder loop: talk, it builds, check the live preview, say what is wrong, publish](visuals/f1-builder-loop.png)
 

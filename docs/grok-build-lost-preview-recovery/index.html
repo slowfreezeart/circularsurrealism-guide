@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Build Not Working? Recover a Lost Preview, Step by Step</title>
+<meta name="description" content="Grok Build preview gone or stuck loading? The real recovery from a 396-prompt build: restore from the live site, compare page by page, then back up.">
+<link rel="canonical" href="https://guide.circularsurrealism.com/grok-build-lost-preview-recovery/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Circular Surrealism · Build Notes">
+<meta property="og:title" content="Grok Build Not Working? Recover a Lost Preview, Step by Step">
+<meta property="og:description" content="Grok Build preview gone or stuck loading? The real recovery from a 396-prompt build: restore from the live site, compare page by page, then back up.">
+<meta property="og:url" content="https://guide.circularsurrealism.com/grok-build-lost-preview-recovery/">
+<meta property="og:image" content="https://guide.circularsurrealism.com/assets/og/grok-build-lost-preview-recovery.jpg">
+<meta name="twitter:image" content="https://guide.circularsurrealism.com/assets/og/grok-build-lost-preview-recovery.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grok Build Not Working? Recover a Lost Preview, Step by Step">
+<meta name="twitter:description" content="Grok Build preview gone or stuck loading? The real recovery from a 396-prompt build: restore from the live site, compare page by page, then back up.">
+<meta name="theme-color" content="#0d0b08">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/circular-surrealism-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Grok Build preview lost or not loading? How to recover your work without starting over", "description": "Grok Build preview gone or stuck loading? The real recovery from a 396-prompt build: restore from the live site, compare page by page, then back up.", "mainEntityOfPage": "https://guide.circularsurrealism.com/grok-build-lost-preview-recovery/", "author": {"@type": "Person", "name": "Slowfreeze", "url": "https://circularsurrealism.com"}, "publisher": {"@type": "Organization", "name": "Circular Surrealism", "url": "https://circularsurrealism.com"}, "image": "https://guide.circularsurrealism.com/assets/og/grok-build-lost-preview-recovery.jpg"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.25" stroke="currentColor" stroke-width="0.75"></circle><circle cx="16" cy="16" r="9.5" stroke="currentColor" stroke-width="0.75" opacity="0.7"></circle><circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="0.9"></circle><circle cx="16" cy="16" r="1.4" fill="currentColor"></circle></svg><span><span class="wordmark">Circular Surrealism</span> <em>Build Notes</em></span></a>
+<nav><a href="/">Articles</a><a href="https://circularsurrealism.com" rel="noopener">The site</a></nav>
+</div></header>
+<main id="main" class="wrap article">
+<p class="eyebrow"><a href="/">Build Notes</a> · Case study: circularsurrealism.com</p>
+<h1>Grok Build preview lost or not loading? How to recover your work without starting over</h1>
+<p class="dek">Grok Build preview gone or stuck loading? The real recovery from a 396-prompt build: restore from the live site, compare page by page, then back up.</p>
+<div class="prose">
+<p>You open the conversation where your site lives and the preview will not load. Or it loads, and half of what you built is missing. Your first instinct is to ask the builder to rebuild it. In the case study behind this article, that instinct cost credits and a long night.</p>
+<aside class="tier-bar" aria-label="The guides"><span class="tb-label">The guides</span><a class="tb-item tb-main" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">The House Guide <b>$29 <s>$39</s></b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Quick Start <b>$19</b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Checklist <b>Free</b></a><a class="tb-more" href="#guides">Compare &darr;</a><span class="tb-founding">$29 founding price for the first 50 buyers, code FOUNDING50</span></aside>
+
+<p>This is the full recovery from <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, an artist's site vibe coded with AI in Grok Build over about 8 weeks and 396 prompts. The worst stretch of the build was 2 to 4 September 2026, when the preview was lost. By the build diary's count it took 11 prompts, 7 fix rounds and 3 active days to get back to where things were. Everything below comes from that chat, including what went wrong first.</p>
+<p>The short version: <strong>the published site is the source of truth.</strong> Restore from it, compare page by page, then back up so it can't happen the same way twice.</p>
+<figure><img src="/assets/img/e2-restore-from-live-1600.webp" srcset="/assets/img/e2-restore-from-live-900.webp 900w, /assets/img/e2-restore-from-live-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="670" alt="Lost preview: point the builder at the live URL, compare page by page, keep building" decoding="async"><figcaption>Lost preview: point the builder at the live URL, compare page by page, keep building</figcaption></figure>
+<h2 id="what-actually-happened-when-the-preview-was-lost">What actually happened when the preview was lost?</h2>
+<p>The order matters, because each step looked like a different problem.</p>
+<ol>
+<li><strong>A normal evening of edits.</strong> On 2 September the artist was working on new themes and a small visit counter in the header.</li>
+<li><strong>"It keeps on loading."</strong> The preview stopped opening. The builder answered that it was restoring the site "into this empty workspace from the live site." The editing copy was gone.</li>
+<li><strong>A thin rebuild.</strong> The restored preview was missing a lot: the sold marks, the connections to the marketplaces that feed the listings, the works and collections sections, the activity ledger, and the homepage hero showed 6 works instead of 50.</li>
+<li><strong>Credits ran out.</strong> The artist had spent their last credits on the rebuild, and then the preview pop-up stopped appearing on the phone at all. The next morning they estimated about $5 of credits had been wasted.</li>
+<li><strong>The explanation.</strong> The builder's own account: the in-chat preview "went dark because the studio machine slept," and the editing room "was wiped overnight." The published site was never touched. Everything was still live at the domain.</li>
+</ol>
+<p>So two different things had been mixed up: the <strong>editing copy</strong> in the conversation was gone, but the <strong>website</strong> was fine.</p>
+<h2 id="is-your-live-site-actually-gone">Is your live site actually gone?</h2>
+<p>Probably not. Check it first, before you ask for anything:</p>
+<ul>
+<li>Open your live address (your grok.me link or your own domain) on your phone.</li>
+<li>Walk the pages that matter most: the homepage, one item page, anything with live data.</li>
+</ul>
+<p>If the live site works, you have not lost your website. You have lost the editing copy, and that can be rebuilt <strong>from</strong> the live site instead of from nothing.</p>
+<p>If the live site is also gone, that is a different problem, and the backup in the last section is what saves you.</p>
+<h2 id="step-1-stop-asking-for-a-rebuild">Step 1: Stop asking for a rebuild</h2>
+<p>A rebuild from a blank workspace makes the builder guess at everything you already decided. That is how the case study got a thinner site with the wrong hero and no sold marks. Each guess you then correct costs another round of credits.</p>
+<p>Say it plainly and finally:</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>The preview lost our work. Do not rebuild from scratch. The live site at [URL] is the source of truth: restore from it, keep everything it has, then show me the preview. Tell me anything you could not restore.
+</code></pre></div>
+<p>In the case study, once the artist pointed at the live site, the builder said: "The live site is the source of truth." It read the published site's own files and put the real pages back (sold marks, marketplace listings, the 50-work hero, works, collections and the full activity ledger), then kept the new themes and visit counter on top.</p>
+<h2 id="step-2-get-the-preview-to-open-again">Step 2: Get the preview to open again</h2>
+<p>If the builder says the preview is back but you cannot see it:</p>
+<ul>
+<li><strong>Pull the chat down to refresh</strong> on the phone.</li>
+<li><strong>Open the same conversation on a computer.</strong> The builder's own suggestion was to open the same conversation on grok.com on a computer if the iOS pop-up still hides.</li>
+<li>Don't send the same long prompt again while you wait. A repeated long prompt spends credits twice.</li>
+</ul>
+<h2 id="step-3-compare-the-restored-preview-with-the-live-site-page-by-page">Step 3: Compare the restored preview with the live site, page by page</h2>
+<p>A restore that looks right on the homepage can still be wrong one page in. After the case-study restore, the artist walked the site and found four rooms that didn't match the live version:</p>
+<ul>
+<li><strong>About</strong> was missing details that were on the live page</li>
+<li><strong>Process</strong> had lost the hand-picked works for each step</li>
+<li><strong>Reach</strong> had dropped some of the social cards</li>
+<li><strong>The footer</strong> was missing some of the marketplace links</li>
+</ul>
+<p>All of them were matched to the live site before anything was published.</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>Compare this preview with the live site at [URL], page by page. List anything on the live site that is missing or different in the preview (pages, sections, items, live data). Do not change anything yet.
+</code></pre></div>
+<p>Then do a final count before you publish. In the case study the check before the next publish confirmed the same numbers as the live site: 415 works, 25 collections, the 50-work hero, and the same sales totals.</p>
+<h2 id="step-4-check-the-small-things-that-make-a-preview-hang">Step 4: Check the small things that make a preview hang</h2>
+<p>During the first restore, the builder found the preview was stalling on <strong>empty media addresses</strong> (images and videos with no file behind them) and a heavy catalog, "not on your domain." Later in the build, on 16 October, a blank preview turned out to be <strong>one broken comma</strong> in a data file. Fixing that single character brought the preview back. For media-heavy sites, see also <a href="/make-ai-built-website-load-faster/">Website slow on mobile? 8 fixes for AI-built image and video sites</a>.</p>
+<p>Before you assume the worst:</p>
+<div class="prompt"><span class="prompt-label">Prompt</span><button class="copy" type="button">Copy</button><pre><code>The preview is blank or stuck loading. Before changing anything, check the data files for errors (a broken comma or bracket) and look for empty image or video links. Tell me what you find.
+</code></pre></div>
+<h2 id="step-5-publish-only-when-the-preview-matches">Step 5: Publish only when the preview matches</h2>
+<p>Do not publish a half-restored preview. Publishing replaces the live site, and the live site is your only full copy until you have a backup. In the case study the live site stayed untouched until the restored preview matched it. The new edits went out after that.</p>
+<h2 id="step-6-back-up-so-the-next-loss-is-a-non-event">Step 6: Back up so the next loss is a non-event</h2>
+<p>The artist's own words: "This is the part I wish I had done earlier." Export to GitHub copies every file of the project into a repository you own. It is not the live site; it is the insurance if the conversation, the editing copy, or the platform ever goes away.</p>
+<figure><img src="/assets/img/e2-three-pieces-1600.webp" srcset="/assets/img/e2-three-pieces-900.webp 900w, /assets/img/e2-three-pieces-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="661" alt="Domain, live site and files: the three pieces you should own" decoding="async" loading="lazy"><figcaption>Domain, live site and files: the three pieces you should own</figcaption></figure>
+<ul>
+<li>Do it on day one, before anything goes wrong.</li>
+<li>Export again after each chapter you publish, "so the backup is not six months behind."</li>
+<li>If you can't find the button on a phone, use the same account on a computer.</li>
+</ul>
+<p>The full steps are in <a href="/grok-build-publish-custom-domain-github/">Grok Build: publish, custom domain, GitHub backup</a>. In this build, the artist first asked how export works on 15 September, after the loss, and did the first Export to GitHub a few days after that.</p>
+<h2 id="how-do-you-avoid-losing-the-preview-in-the-first-place">How do you avoid losing the preview in the first place?</h2>
+<ul>
+<li><strong>One site, one conversation.</strong> Keep every edit for one site in one thread, and start side projects in a new chat so they can't put the main site at risk. More on the method in <a href="/how-to-build-a-website-with-ai/">How to build a website with AI, step by step</a>.</li>
+<li><strong>Publish in chapters.</strong> The live site was the copy that saved this build. A recent publish means a recent copy.</li>
+<li><strong>Export after each chapter.</strong> GitHub is the copy that doesn't depend on the conversation.</li>
+<li><strong>Keep a credit buffer before big changes.</strong> The build ran out of credits in the middle of hard fixes more than once, including during this recovery.</li>
+</ul>
+<figure><img src="/assets/img/f1-one-thread-1600.webp" srcset="/assets/img/f1-one-thread-900.webp 900w, /assets/img/f1-one-thread-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="755" alt="One site, one thread: every edit stacks on what is already true" decoding="async" loading="lazy"><figcaption>One site, one thread: every edit stacks on what is already true</figcaption></figure>
+<h2 id="faq">FAQ</h2>
+<h3 id="does-losing-the-grok-build-preview-delete-my-website">Does losing the Grok Build preview delete my website?</h3>
+<p>Not in this case. The editing copy in the conversation was wiped, but the published site stayed live at its domain the whole time.</p>
+<h3 id="should-i-start-a-new-chat-and-rebuild">Should I start a new chat and rebuild?</h3>
+<p>No. A rebuild from a blank chat came back missing features and cost credits. Restoring from the live site, in the same conversation, is what worked.</p>
+<h3 id="why-is-my-grok-build-preview-stuck-loading">Why is my Grok Build preview stuck loading?</h3>
+<p>In this build it was an editing workspace that had gone to sleep and come back empty, then empty media links and a heavy catalog. Another time it was one broken comma in a data file. Ask the builder to check for each of these before rebuilding anything.</p>
+<h3 id="is-github-export-the-same-as-publishing">Is GitHub export the same as publishing?</h3>
+<p>No. Publishing puts the site live. Export copies the files to a repository you own, as a backup.</p>
+<h2 id="go-further">Go further</h2>
+<p>Recovery is one lesson of the publishing module in <strong>The House Guide</strong>, the written path of the whole 396-prompt build, with the prompts and the failures. <strong>Quick Start</strong> covers this part (foundation, performance, publishing, recovery) in 39 lessons.</p>
+<section class="tiers" id="guides" aria-labelledby="guides-h"><p class="tiers-eyebrow">The guides</p><h2 class="tiers-h" id="guides-h">Build your own high-end site with AI</h2><div class="tier-grid"><div class="tier featured"><div class="tier-top"><h3 class="tier-name">The House Guide</h3><span class="tier-badge">Most complete</span></div><p class="tier-price"><span class="now">$29</span><s class="was" aria-label="regular price $39">$39</s></p><p class="tier-founding">$29 founding price for the first 50 buyers, code FOUNDING50</p><ul class="tier-points"><li>20 modules, 102 written lessons</li><li>126-page PDF + EPUB</li><li>Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI</li><li>Prompt library (18 prompts), troubleshooting playbook, build diary</li><li>30-day refund</li></ul><a class="tier-btn primary" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">Get The House Guide</a></div><div class="tier-pair"><div class="tier"><div class="tier-top"><h3 class="tier-name">Quick Start</h3></div><p class="tier-price"><span class="now">$19</span></p><ul class="tier-points"><li>7 modules, 39 written lessons</li><li>55-page PDF + EPUB</li><li>Planning and content, the full performance module, publish, domain, backup, launch review</li><li>Prompt library (18 prompts)</li><li>30-day refund</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Get Quick Start</a></div><div class="tier"><div class="tier-top"><h3 class="tier-name">Performance Checklist</h3></div><p class="tier-price"><span class="now">Free</span></p><ul class="tier-points"><li>12-item checklist</li><li>The full 7-lesson performance module</li><li>13-page PDF</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Get the free checklist</a></div></div></div><p class="tiers-note">Written guides, no coding needed, works with any AI website builder.</p></section>
+
+
+<p><em>Built with Grok. The case-study site was built with Grok Build by xAI. This article and the guides are independent and are not made, endorsed or sponsored by xAI.</em></p>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
+<p class="small">&copy; Slowfreeze · Circular Surrealism</p>
+</div></footer>
+<a class="tier-float" href="#guides" hidden>Guides from $19</a>
+<script src="/site.js" defer></script>
+</body></html>
