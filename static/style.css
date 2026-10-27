@@ -1,4 +1,4 @@
-/* Build Notes — guide.circularsurrealism.com. Dark gallery palette, gold accent; only web font is Syne 600 for the brand wordmark. */
+/* Slowfreeze Builds — guide.circularsurrealism.com. Dark gallery palette, gold accent; only web font is Syne 600 for the brand wordmark. */
 :root{
   --bg:#0d0b08; --bg2:#15120d; --line:#2c261c; --text:#ece4d4; --muted:#a99f8c;
   --gold:#d8b45a; --gold-soft:#d8b45a22;
@@ -103,3 +103,10 @@ nav,.brand{white-space:nowrap}
 .tier-float.on{opacity:1;transform:none;pointer-events:auto}
 .tier-float:hover{background:#f0d488;color:#1a1408}
 @media print{.tier-float,.tier-bar{display:none}}
+/* About the author */
+.author-box{margin:56px 0 0;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--bg2)}
+.author-box p{margin:0 0 10px;color:var(--text);font-size:16px;line-height:1.6}
+.author-box p:last-child{margin-bottom:0}
+.author-eyebrow,.author-box .author-eyebrow{font:12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.author-box a{color:var(--gold)}
+.author-links{font-size:14.5px}

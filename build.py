@@ -287,15 +287,45 @@ def head(title, desc, canonical, og_img, og_type="website", extra=""):
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap">
-<a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.25" stroke="currentColor" stroke-width="0.75"></circle><circle cx="16" cy="16" r="9.5" stroke="currentColor" stroke-width="0.75" opacity="0.7"></circle><circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="0.9"></circle><circle cx="16" cy="16" r="1.4" fill="currentColor"></circle></svg><span><span class="wordmark">Circular Surrealism</span> <em>Build Notes</em></span></a>
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.25" stroke="currentColor" stroke-width="0.75"></circle><circle cx="16" cy="16" r="9.5" stroke="currentColor" stroke-width="0.75" opacity="0.7"></circle><circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="0.9"></circle><circle cx="16" cy="16" r="1.4" fill="currentColor"></circle></svg><span><span class="wordmark">Slowfreeze Builds</span></span></a>
 <nav><a href="/">Articles</a><a href="{cfg['art_site_url']}" rel="noopener">The site</a></nav>
 </div></header>
 """
 
 
+# Entity graph (from /workspace/course/seo/guide.circularsurrealism.com-home.jsonld.json).
+PERSON_ID = "https://circularsurrealism.com/#slowfreeze"
+ORG_ID = f"{HUB}/#org"
+WEBSITE_ID = f"{HUB}/#website"
+LOGO = {"@type": "ImageObject", "url": f"{HUB}/circular-surrealism-icon.png"}
+PERSON_SAMEAS = ["https://x.com/Slowfreeze98", "https://www.transient.xyz/@slowfreeze", "https://opensea.io/Slowfreeze"]
+ABOUT_URL = cfg["art_site_url"].rstrip("/") + "/about"
+
+
+def home_graph():
+    return {"@context": "https://schema.org", "@graph": [
+        {"@type": "WebSite", "@id": WEBSITE_ID, "url": f"{HUB}/", "name": cfg["site_name"],
+         "alternateName": "Circular Surrealism · Build Notes", "inLanguage": cfg["lang"],
+         "publisher": {"@id": ORG_ID}, "author": {"@id": PERSON_ID}},
+        {"@type": "Organization", "@id": ORG_ID, "name": cfg["site_name"], "url": f"{HUB}/", "logo": LOGO,
+         "description": "Vibe coding guides and free build notes from one real 396-prompt website build: circularsurrealism.com. No coding experience necessary.",
+         "founder": {"@id": PERSON_ID}, "parentOrganization": {"@id": "https://circularsurrealism.com/#studio"},
+         "sameAs": ["https://x.com/SlowfreezeBuild", "https://slowfreezebuilds.gumroad.com/", "https://www.pinterest.com/slowfreezebuilds/"]},
+        {"@type": "Person", "@id": PERSON_ID, "name": cfg["author"], "url": ABOUT_URL, "sameAs": PERSON_SAMEAS},
+    ]}
+
+
+AUTHOR_BOX = f"""<aside class="author-box" aria-label="About the author">
+<p class="author-eyebrow">About the author</p>
+<p><strong>Slowfreeze</strong> is an AI artist and the creator of Circular Surrealism, making AI Art since 2022. He vibe coded <a href="{cfg['art_site_url']}" rel="noopener">circularsurrealism.com</a> himself in Grok Build over about 8 weeks and 396 prompts, and shares what that build taught him here, as Slowfreeze Builds.</p>
+<p class="author-links"><a href="{ABOUT_URL}" rel="noopener">About Slowfreeze</a> · <a href="https://x.com/Slowfreeze98" rel="noopener">@Slowfreeze98 on X</a> · <a href="https://x.com/SlowfreezeBuild" rel="noopener">@SlowfreezeBuild on X</a></p>
+</aside>
+"""
+
+
 FOOT = f"""<footer class="site-footer"><div class="wrap">
 <p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="{cfg['art_site_url']}" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
-<p class="small">&copy; Slowfreeze · Circular Surrealism</p>
+<p class="small">&copy; Slowfreeze Builds · by Slowfreeze, creator of <a href="{cfg['art_site_url']}" rel="noopener">Circular Surrealism</a></p>
 </div></footer>
 <a class="tier-float" href="#guides" hidden>Guides from $19</a>
 <script src="/site.js" defer></script>
@@ -333,10 +363,12 @@ def build():
         canonical = f"{HUB}/{slug}/"
         og = og_image(Path(a["og_image"]).name, slug) if a.get("og_image") else None
         body = render_body(a["body_md"], slug)
-        ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["h1"][:110],
-              "description": a["description"], "mainEntityOfPage": canonical,
-              "author": {"@type": "Person", "name": cfg["author"], "url": cfg["art_site_url"]},
-              "publisher": {"@type": "Organization", "name": "Circular Surrealism", "url": cfg["art_site_url"]}}
+        ld = {"@context": "https://schema.org", "@type": "Article", "@id": f"{canonical}#article",
+              "headline": a["h1"][:110], "description": a["description"], "mainEntityOfPage": canonical,
+              "author": {"@type": "Person", "@id": PERSON_ID, "name": cfg["author"], "url": ABOUT_URL,
+                         "sameAs": PERSON_SAMEAS},
+              "publisher": {"@type": "Organization", "@id": ORG_ID, "name": cfg["site_name"], "logo": LOGO},
+              "isPartOf": {"@id": WEBSITE_ID}, "about": {"@id": "https://circularsurrealism.com/#website"}}
         if og:
             ld["image"] = og
         # Dates come only from front matter (filled from git history); never guessed.
@@ -349,13 +381,13 @@ def build():
         extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
         page = head(a["title"], a["description"], canonical, og, "article", extra)
         page += f"""<main id="main" class="wrap article">
-<p class="eyebrow"><a href="/">Build Notes</a> · Case study: circularsurrealism.com</p>
+<p class="eyebrow"><a href="/">Slowfreeze Builds</a> · Case study: circularsurrealism.com</p>
 <h1>{html.escape(a['h1'])}</h1>
 <p class="dek">{html.escape(a['description'])}</p>
 <div class="prose">
 {body}
 </div>
-</main>
+{AUTHOR_BOX}</main>
 """ + FOOT
         d = OUT / slug
         d.mkdir()
@@ -365,10 +397,8 @@ def build():
         cards.append(f'<li class="card"><a href="/{slug}/">{img}<div><h2>{html.escape(a["h1"])}</h2><p>{html.escape(a["description"])}</p><span class="more">Read the article →</span></div></a></li>')
 
     idx_desc = cfg["site_tagline"][:155]
-    site_ld = {"@context": "https://schema.org", "@type": "WebSite", "name": cfg["site_name"],
-               "url": f"{HUB}/", "inLanguage": cfg["lang"],
-               "publisher": {"@type": "Person", "name": cfg["author"], "url": cfg["art_site_url"]}}
-    page = head("Build a High-End Website with AI — Build Notes", idx_desc, f"{HUB}/",
+    site_ld = home_graph()
+    page = head("Build a High-End Website with AI — Slowfreeze Builds", idx_desc, f"{HUB}/",
                 og_image(Path(arts[order[0]]["og_image"]).name, "home") if order else None,
                 extra=f'<script type="application/ld+json">{json.dumps(site_ld, ensure_ascii=False)}</script>')
     page += f"""<main id="main" class="wrap home">
@@ -383,11 +413,11 @@ def build():
 <ul class="cards">
 {''.join(cards)}
 </ul>
-</main>
+{AUTHOR_BOX}</main>
 """ + FOOT
     (OUT / "index.html").write_text(fill_placeholders(page, "index"))
 
-    nf = head("Page not found — Build Notes", "This page does not exist.", f"{HUB}/404.html", None)
+    nf = head("Page not found — Slowfreeze Builds", "This page does not exist.", f"{HUB}/404.html", None)
     nf = nf.replace("<head>", '<head>\n<meta name="robots" content="noindex">')
     nf += '<main id="main" class="wrap home"><h1>Not here.</h1><p class="dek">This page does not exist. <a href="/">Back to the articles</a>.</p></main>' + FOOT
     (OUT / "404.html").write_text(nf)

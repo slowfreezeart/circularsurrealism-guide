@@ -1,5 +1,5 @@
 {
-  "site_name": "Circular Surrealism · Build Notes",
+  "site_name": "Slowfreeze Builds",
   "site_tagline": "Free articles on building a high-end website with AI, from one real 396-prompt build: circularsurrealism.com.",
   "hub_url": "https://guide.circularsurrealism.com",
   "art_site_url": "https://circularsurrealism.com",
@@ -15,7 +15,7 @@
     "grok-build-publish-custom-domain-github",
     "make-ai-built-website-load-faster"
   ],
-  "home_updated": "2026-10-26T09:10:20-05:00",
+  "home_updated": "2026-10-27T09:54:51-05:00",
   "founding_price": {
     "enabled": true,
     "price": "$29",

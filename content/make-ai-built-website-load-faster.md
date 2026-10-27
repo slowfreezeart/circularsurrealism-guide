@@ -15,12 +15,12 @@ og_image: "visuals/s4-before-after-media.png"
 replaces_draft: "../03-make-an-ai-built-website-fast.md"
 status: draft
 published: "2026-10-26T00:27:52-05:00"
-updated: "2026-10-26T02:56:53-05:00"
+updated: "2026-10-27T09:54:51-05:00"
 ---
 
 An AI builder will happily put your original files everywhere: a 4K video in a small card, a 31 MB image in a thumbnail, a mosaic of hundreds of full-size images on the homepage. The site works on your computer. On a phone it feels heavy, and it can crash.
 
-That is what happened to [circularsurrealism.com](https://circularsurrealism.com), a media-heavy AI art site built with Grok Build. It was "done": every page existed. Then it took its own stretch of work, mostly 16 to 21 September 2026, to make it light. This article is that fix, step by step, with the prompts. It applies to any AI-built or "vibe coded" site with lots of images or video.
+That is what happened to [circularsurrealism.com](https://circularsurrealism.com), a media-heavy AI Art site built with Grok Build. It was "done": every page existed. Then it took its own stretch of work, mostly 16 to 21 September 2026, to make it light. This article is that fix, step by step, with the prompts. It applies to any AI-built or "vibe coded" site with lots of images or video.
 
 A note on honesty: load times were never measured in that build, so there are no "X seconds faster" claims here. Measure your own site before and after (a phone screen recording, or the Lighthouse report in Chrome's developer tools).
 

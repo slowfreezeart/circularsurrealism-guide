@@ -14,12 +14,12 @@ canonical: "{{HUB_URL}}/grok-build-lost-preview-recovery/"
 og_image: "visuals/e2-restore-from-live.png"
 status: draft
 published: "2026-10-26T01:48:06-05:00"
-updated: "2026-10-26T02:56:53-05:00"
+updated: "2026-10-27T09:54:51-05:00"
 ---
 
 You open the conversation where your site lives and the preview will not load. Or it loads, and half of what you built is missing. Your first instinct is to ask the builder to rebuild it. In the case study behind this article, that instinct cost credits and a long night.
 
-This is the full recovery from [circularsurrealism.com](https://circularsurrealism.com), an AI artist's site vibe coded with AI in Grok Build over about 8 weeks and 396 prompts. The worst stretch of the build was 2 to 4 September 2026, when the preview was lost. By the build diary's count it took 11 prompts, 7 fix rounds and 3 active days to get back to where things were. Everything below comes from that chat, including what went wrong first.
+This is the full recovery from [circularsurrealism.com](https://circularsurrealism.com), an AI artist's site vibe coded in Grok Build over about 8 weeks and 396 prompts. The worst stretch of the build was 2 to 4 September 2026, when the preview was lost. By the build diary's count it took 11 prompts, 7 fix rounds and 3 active days to get back to where things were. Everything below comes from that chat, including what went wrong first.
 
 The short version: **the published site is the source of truth.** Restore from it, compare page by page, then back up so it can't happen the same way twice.
 
