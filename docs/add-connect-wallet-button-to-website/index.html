@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Add a Connect Wallet Button to Your Website (Read-Only)</title>
+<meta name="description" content="How to add wallet connect to your website without writing code: a read-only button for Ethereum, Base, Tezos and Solana, from a vibe coded AI Art site.">
+<link rel="canonical" href="https://guide.circularsurrealism.com/add-connect-wallet-button-to-website/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Slowfreeze Builds">
+<meta property="og:title" content="How to Add a Connect Wallet Button to Your Website (Read-Only)">
+<meta property="og:description" content="How to add wallet connect to your website without writing code: a read-only button for Ethereum, Base, Tezos and Solana, from a vibe coded AI Art site.">
+<meta property="og:url" content="https://guide.circularsurrealism.com/add-connect-wallet-button-to-website/">
+<meta property="og:image" content="https://guide.circularsurrealism.com/assets/og/add-connect-wallet-button-to-website.jpg">
+<meta name="twitter:image" content="https://guide.circularsurrealism.com/assets/og/add-connect-wallet-button-to-website.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Add a Connect Wallet Button to Your Website (Read-Only)">
+<meta name="twitter:description" content="How to add wallet connect to your website without writing code: a read-only button for Ethereum, Base, Tezos and Solana, from a vibe coded AI Art site.">
+<meta name="theme-color" content="#0d0b08">
+<meta name="p:domain_verify" content="8b572280ec21d7344ce35e3d0566f415"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/circular-surrealism-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://guide.circularsurrealism.com/add-connect-wallet-button-to-website/#article", "headline": "How to add a Connect Wallet button to your artist website: read-only, four chains, never signs", "description": "How to add wallet connect to your website without writing code: a read-only button for Ethereum, Base, Tezos and Solana, from a vibe coded AI Art site.", "mainEntityOfPage": "https://guide.circularsurrealism.com/add-connect-wallet-button-to-website/", "author": {"@type": "Person", "@id": "https://circularsurrealism.com/#slowfreeze", "name": "Slowfreeze", "url": "https://circularsurrealism.com/about", "sameAs": ["https://x.com/Slowfreeze98", "https://www.transient.xyz/@slowfreeze", "https://opensea.io/Slowfreeze"]}, "publisher": {"@type": "Organization", "@id": "https://guide.circularsurrealism.com/#org", "name": "Slowfreeze Builds", "logo": {"@type": "ImageObject", "url": "https://guide.circularsurrealism.com/circular-surrealism-icon.png"}}, "isPartOf": {"@id": "https://guide.circularsurrealism.com/#website"}, "about": {"@id": "https://circularsurrealism.com/#website"}, "image": "https://guide.circularsurrealism.com/assets/og/add-connect-wallet-button-to-website.jpg", "datePublished": "2026-11-06T10:09:49-06:00", "dateModified": "2026-11-06T10:09:49-06:00"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.25" stroke="currentColor" stroke-width="0.75"></circle><circle cx="16" cy="16" r="9.5" stroke="currentColor" stroke-width="0.75" opacity="0.7"></circle><circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="0.9"></circle><circle cx="16" cy="16" r="1.4" fill="currentColor"></circle></svg><span><span class="wordmark">Slowfreeze Builds</span></span></a>
+<nav><a href="/">Articles</a><a href="https://circularsurrealism.com" rel="noopener">The site</a></nav>
+</div></header>
+<main id="main" class="wrap article">
+<p class="eyebrow"><a href="/">Slowfreeze Builds</a> · Case study: circularsurrealism.com</p>
+<h1>How to add a Connect Wallet button to your artist website: read-only, four chains, never signs</h1>
+<p class="dek">How to add wallet connect to your website without writing code: a read-only button for Ethereum, Base, Tezos and Solana, from a vibe coded AI Art site.</p>
+<div class="prose">
+<p>Search for how to add wallet connect to a website and most answers are developer code: install a library, paste a component, wire up a provider. That is fine if you write code. Most artists don't. And the real question collectors ask is not "how" but "is it safe?"</p>
+<aside class="tier-bar" aria-label="The guides"><span class="tb-label">The guides</span><a class="tb-item tb-main" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">The House Guide <b>$29 <s>$39</s></b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Quick Start <b>$19</b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Checklist <b>Free</b></a><a class="tb-more" href="#guides">Compare &darr;</a><span class="tb-founding">$29 founding price for the first 50 buyers, code FOUNDING50</span></aside>
+
+<p>This article is how the Connect Wallet button on <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a> was built. Slowfreeze, an AI artist, vibe coded the whole site in Grok Build, and the wallet room was one feature of it: <strong>25 prompts, 14 fix rounds and 914 builder steps over 3 active days (19 to 23 September)</strong>. It connects on Ethereum, Base, Tezos and Solana, it is read-only, and it never asks a collector to sign anything.</p>
+<h2 id="what-does-a-connect-wallet-button-actually-do-on-an-artist-site">What does a Connect Wallet button actually do on an artist site?</h2>
+<p>On the case-study site, the wallet room is called <strong>You hold</strong>. A collector connects a wallet, and the page shows which works from this site that wallet holds, named by their ENS or Tezos alias where one exists.</p>
+<p>That is the whole job. It is not a mint button, it is not a checkout, and it does not move anything. It answers one question for a collector: "what do I own from this artist?"</p>
+<h2 id="is-it-safe-to-connect-a-wallet-to-a-website">Is it safe to connect a wallet to a website?</h2>
+<p>Before shipping it, the author asked the builder directly: "Is it completely safe to connect your wallet in the three chains?"</p>
+<p>The builder checked what the connect flow requests from each wallet and confirmed it: the wallet only shares its <strong>public address</strong>, the same one anyone can already see on a marketplace. It never asks to send, transfer, approve or sign. The connect sheet says this out loud and never lists "send".</p>
+<figure><img src="/assets/img/w2-read-only-1600.webp" srcset="/assets/img/w2-read-only-900.webp 900w, /assets/img/w2-read-only-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="1066" alt="The wallet connect sheet, stating it is read-only" decoding="async"><figcaption>The wallet connect sheet, stating it is read-only</figcaption></figure>
+<p>That gives you the rule for your own button:</p>
+<ol>
+<li>Ask the builder exactly what the connect flow requests from each wallet.</li>
+<li>Make sure it only asks for the public address.</li>
+<li>Write the promise on the connect sheet in plain words: "read-only: never asks to send, approve or sign".</li>
+<li>Ask the same question again after every change to the flow.</li>
+</ol>
+<p>Unclear wording scares people. A plain promise on the sheet does more for trust than any logo.</p>
+<h2 id="which-wallet-connectors-work-for-ethereum-base-tezos-and-solana">Which wallet connectors work for Ethereum, Base, Tezos and Solana?</h2>
+<p>The goal was a button that connects "when you are on a normal browser", not only inside a wallet's own browser. The case study uses one connector per chain:</p>
+<table>
+<thead>
+<tr>
+<th>Chain</th>
+<th>Connector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ethereum and Base</td>
+<td>WalletConnect</td>
+</tr>
+<tr>
+<td>Tezos</td>
+<td>Beacon</td>
+</tr>
+<tr>
+<td>Solana</td>
+<td>A Phantom app link</td>
+</tr>
+</tbody>
+</table>
+<figure><img src="/assets/img/w2-connectors-1600.webp" srcset="/assets/img/w2-connectors-900.webp 900w, /assets/img/w2-connectors-1600.webp 1600w" sizes="(max-width: 820px) 100vw, 820px" width="1600" height="737" alt="One connector per chain: WalletConnect, Beacon and Phantom" decoding="async" loading="lazy"><figcaption>One connector per chain: WalletConnect, Beacon and Phantom</figcaption></figure>
+<p>If you are wondering about the thirdweb connect wallet button that shows up in so many tutorials: the case-study site does not use thirdweb. Grok Build wired the connectors above directly. Any of these routes can work; what matters is that the button stays read-only and works on a phone.</p>
+<p>One practical recommendation: get your own WalletConnect project ID from Reown's dashboard, and keep it in the project's settings, not pasted into the code.</p>
+<p>The prompt that starts it:</p>
+<pre><code class="language-prompt">Add a connect button for [chains] that works from a normal browser, is read-only, never asks to send or sign, and shows the items from my site that wallet holds. On the connect sheet, say plainly that it only shares the public address.
+</code></pre></div>
+<h2 id="what-broke-on-the-way-and-how-was-it-fixed">What broke on the way, and how was it fixed?</h2>
+<p>Fourteen fix rounds is a lot for one button. Here is what actually went wrong, so you can recognise it on your own site:</p>
+<ul>
+<li><strong>Phantom opened a web page instead of the app.</strong> The fix was to ask for the wallet's app link.</li>
+<li><strong>Tezos crashed with an error</strong>, and later broke again while other chains were being fixed.</li>
+<li><strong>Phantom lost the session</strong> when the collector came back from the app.</li>
+<li><strong>Fixing one chain broke another.</strong> The rule that came out of it: fix one chain at a time, and retest all the others after every fix.</li>
+</ul>
+<pre><code class="language-prompt">[Chain] is not connecting: [what happens]. Fix only [chain]. Do not change the other chains. After the fix, tell me how to test each chain on a phone.
+</code></pre></div>
+<h2 id="why-does-the-wallet-extension-say-unexpected-error-on-desktop">Why does the wallet extension say "unexpected error" on desktop?</h2>
+<p>Phones worked first. On a computer, the MetaMask and Phantom extensions said "unexpected error", even when they were installed.</p>
+<p>The author's instruction was to fix desktop "and do not touch anything of how it's on mobile". The final fix: on desktop, Ethereum and Phantom open the connect step in a small window of their own, where Chrome can show the extension's approval. The phone path was left alone.</p>
+<p>The lesson is bigger than wallets: when one platform works, name it as the thing that must not change.</p>
+<pre><code class="language-prompt">This works on the phone but not on desktop. On desktop, [wallet] extensions show [error]. Fix desktop only (for example by opening the connect step in its own small window) and do not touch the mobile version.
+</code></pre></div>
+<h2 id="how-does-the-site-know-which-works-a-wallet-holds">How does the site know which works a wallet holds?</h2>
+<p>The case-study code reads holdings from public chain explorers: <strong>Blockscout</strong> for Ethereum and Base, <strong>TzKT</strong> for Tezos, and Solana's public RPC. Then it matches what it finds against the site's own catalog, so a collector sees "this museum, not the whole chain".</p>
+<p>At first, the lookup found nothing, even for wallets that held works. It was reading the wrong field on each token. The only way to catch that is to test with a wallet you know holds your work.</p>
+<pre><code class="language-prompt">When a wallet connects (or an address is pasted), read which of my catalog's items it holds on [chains], using public data. Show only items from this site. Test with [a public address you know holds items] and tell me what you find.
+</code></pre></div>
+<h2 id="should-the-page-show-the-collectors-name">Should the page show the collector's name?</h2>
+<p>"Not a raw string of characters pretending to be a person." When a wallet connects, the case study titles the page with the collector's ENS or Tezos alias when one exists, then shows how many works they hold and in which collections.</p>
+<p>What it does not do is publish a public list of collectors. The result stays on the visitor's own screen.</p>
+<h2 id="before-you-ship-a-short-checklist">Before you ship: a short checklist</h2>
+<ul>
+<li>☐ Only the public address is requested, and the sheet says so</li>
+<li>☐ One connector per chain, each tested on a phone with the real wallet app</li>
+<li>☐ Desktop extensions tested, with the phone flow unchanged</li>
+<li>☐ Holdings tested with a wallet you know holds your work</li>
+<li>☐ Your own WalletConnect project ID, kept out of the code</li>
+<li>☐ No public list of collectors</li>
+</ul>
+<p>The wallet room is one room in a bigger house. For the rest of the structure (the catalog, collections, Available and Collect), see <a href="/build-an-artist-portfolio-website-with-ai/">how to build an artist portfolio website</a>.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="do-i-need-to-know-how-to-code-to-add-a-connect-wallet-button">Do I need to know how to code to add a Connect Wallet button?</h3>
+<p>No coding experience necessary. On the case-study site, the button was built by describing it to Grok Build, testing it on a phone and on a computer, and saying what was wrong until it worked.</p>
+<h3 id="can-a-read-only-connect-wallet-button-take-funds">Can a read-only Connect Wallet button take funds?</h3>
+<p>The case-study flow only requests the public address. It never asks to send, transfer, approve or sign, and the connect sheet says so. Ask your builder to confirm this for every wallet, and again after every change.</p>
+<h3 id="does-it-work-on-a-phone">Does it work on a phone?</h3>
+<p>Yes. On the case-study site, phones worked first and desktop extensions needed their own fix. Test both.</p>
+<h3 id="how-long-did-it-take">How long did it take?</h3>
+<p>25 prompts and 14 fix rounds over 3 active days, from 19 to 23 September.</p>
+<h2 id="go-further">Go further</h2>
+<p>The whole wallet room, lesson by lesson with the prompts, is in <strong>The House Guide</strong>, in its optional Web3 track. <strong>Quick Start</strong> covers planning, performance and publishing.</p>
+<section class="tiers" id="guides" aria-labelledby="guides-h"><p class="tiers-eyebrow">The guides</p><h2 class="tiers-h" id="guides-h">Build your own high-end site with AI</h2><div class="tier-grid"><div class="tier featured"><div class="tier-top"><h3 class="tier-name">The House Guide</h3><span class="tier-badge">Most complete</span></div><p class="tier-price"><span class="now">$29</span><s class="was" aria-label="regular price $39">$39</s></p><p class="tier-founding">$29 founding price for the first 50 buyers, code FOUNDING50</p><ul class="tier-points"><li>20 modules, 102 written lessons</li><li>126-page PDF + EPUB</li><li>Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI</li><li>Prompt library (18 prompts), troubleshooting playbook, build diary</li><li>30-day refund</li></ul><a class="tier-btn primary" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">Get The House Guide</a></div><div class="tier-pair"><div class="tier"><div class="tier-top"><h3 class="tier-name">Quick Start</h3></div><p class="tier-price"><span class="now">$19</span></p><ul class="tier-points"><li>7 modules, 39 written lessons</li><li>55-page PDF + EPUB</li><li>Planning and content, the full performance module, publish, domain, backup, launch review</li><li>Prompt library (18 prompts)</li><li>30-day refund</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Get Quick Start</a></div><div class="tier"><div class="tier-top"><h3 class="tier-name">Performance Checklist</h3></div><p class="tier-price"><span class="now">Free</span></p><ul class="tier-points"><li>12-item checklist</li><li>The full 7-lesson performance module</li><li>13-page PDF</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Get the free checklist</a></div></div></div><p class="tiers-note">Written guides, no coding experience necessary, works with any AI website builder.</p></section>
+
+
+<p><em>Built with Grok. The case-study site was built with Grok Build by xAI. This article and the guides are independent and are not made, endorsed or sponsored by xAI.</em></p>
+</div>
+<aside class="author-box" aria-label="About the author">
+<p class="author-eyebrow">About the author</p>
+<p><strong>Slowfreeze</strong> is an AI artist and the creator of Circular Surrealism, making AI Art since 2022. He vibe coded <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a> himself in Grok Build over about 8 weeks and 396 prompts, and shares what that build taught him here, as Slowfreeze Builds.</p>
+<p class="author-links"><a href="https://circularsurrealism.com/about" rel="noopener">About Slowfreeze</a> · <a href="https://x.com/Slowfreeze98" rel="noopener">@Slowfreeze98 on X</a> · <a href="https://x.com/SlowfreezeBuild" rel="noopener">@SlowfreezeBuild on X</a></p>
+</aside>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
+<p class="small">&copy; Slowfreeze Builds · by Slowfreeze, creator of <a href="https://circularsurrealism.com" rel="noopener">Circular Surrealism</a></p>
+</div></footer>
+<a class="tier-float" href="#guides" hidden>Guides from $19</a>
+<script src="/site.js" defer></script>
+</body></html>
