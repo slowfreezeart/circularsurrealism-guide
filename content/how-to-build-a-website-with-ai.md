@@ -1,8 +1,8 @@
 ---
-title: "How to Build a Website with AI: A Real 396-Prompt Case Study"
-h1: "How to build a website with AI, step by step (from a real 396-prompt build)"
+title: "How to Build a Website with AI: A Real 400+ Prompt Case Study"
+h1: "How to build a website with AI, step by step (from a real 400+ prompt build)"
 slug: how-to-build-a-website-with-ai
-description: "How to build a website with AI that doesn't look like every other AI site: 8 steps from a real 396-prompt Grok Build case study, with copy-paste prompts."
+description: "How to build a website with AI that doesn't look like every other AI site: 8 steps from a real 400+ prompt Grok Build case study, with copy-paste prompts."
 target_keyword: "how to build a website with ai"
 secondary_keywords:
   - "how to build a website with ai step by step"
@@ -20,7 +20,7 @@ updated: "2026-10-27T09:54:51-05:00"
 
 Most "build a website with AI" tutorials end after the first ten minutes: you type a sentence, a landing page appears, done. That is a real site, but it is rarely a high-end one, and it often looks like every other AI-built site. A high-end site knows your content, has rooms with clear jobs, opens fast on a phone, and keeps working after you stop touching it.
 
-This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an AI artist's museum-style site vibe coded by one person in Grok Build. It took about 8 weeks and 396 prompts, from 27 August to 23 October 2026. The site holds 439 works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
+This is the step-by-step method behind [circularsurrealism.com](https://circularsurrealism.com), an AI artist's museum-style site vibe coded by one person in Grok Build. It took about 8 weeks and 400+ prompts, from 27 August to 23 October 2026. The site holds 440+ works in 27 collections, live sales data, themes, deep zoom and a print shop. Everything below comes from that build, including the parts that went wrong.
 
 ![The AI builder loop: talk, it builds, check the live preview, say what is wrong, publish](visuals/f1-builder-loop.png)
 
@@ -106,7 +106,7 @@ The builder can lay out the rooms. The sentence under your name, the About page,
 
 ## How long does it take, and what does it cost?
 
-Be honest with yourself about time. This site took about 8 weeks and 396 prompts. It was built on the $11-a-month X plan at the time, plus at least $75 in $5 extra credit packs, and the builder ran out of credits in the middle of hard fixes more than once. A simpler site will take less. A high-end one takes sitting with the preview until it is right. Plans and prices change, so check your builder's current ones.
+Be honest with yourself about time. This site took about 8 weeks and 400+ prompts. It was built on the $11-a-month X plan at the time, plus at least $75 in $5 extra credit packs, and the builder ran out of credits in the middle of hard fixes more than once. A simpler site will take less. A high-end one takes sitting with the preview until it is right. Plans and prices change, so check your builder's current ones.
 
 ## FAQ
 

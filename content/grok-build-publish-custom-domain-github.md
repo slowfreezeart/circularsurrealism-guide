@@ -18,7 +18,7 @@ published: "2026-10-26T00:27:52-05:00"
 updated: "2026-10-26T00:27:52-05:00"
 ---
 
-These are the steps used to put [circularsurrealism.com](https://circularsurrealism.com) online with Grok Build, and the problems that came up along the way. The site was built in one conversation over about 8 weeks and 396 prompts. Screens and button names can change as Grok Build updates; the order of operations is what matters.
+These are the steps used to put [circularsurrealism.com](https://circularsurrealism.com) online with Grok Build, and the problems that came up along the way. The site was built in one conversation over about 8 weeks and 400+ prompts. Screens and button names can change as Grok Build updates; the order of operations is what matters.
 
 ## The three pieces you own
 

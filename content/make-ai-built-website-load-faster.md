@@ -142,7 +142,7 @@ This build never measured load times, so no number is promised. Measure your own
 
 ## Go further
 
-The performance overhaul is one module of **The House Guide**, the written path of the whole 396-prompt build. **Quick Start** ($19) includes it together with the foundation and publishing.
+The performance overhaul is one module of **The House Guide**, the written path of the whole 400+ prompt build. **Quick Start** ($19) includes it together with the foundation and publishing.
 
 - [Quick Start, $19]({{QUICKSTART_URL}})
 - [The House Guide, $39]({{GUIDE_URL}})

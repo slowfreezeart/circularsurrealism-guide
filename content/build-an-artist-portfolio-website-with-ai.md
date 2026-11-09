@@ -2,7 +2,7 @@
 title: "How to Build an Artist Portfolio Website and AI Art Archive (Real Example)"
 h1: "How to build an artist portfolio website and AI Art archive: rooms, a real catalog, and live sale marks"
 slug: build-an-artist-portfolio-website-with-ai
-description: "How to build an artist portfolio website and AI Art archive: the rooms, catalog and live sale marks behind a real 439-work site, vibe coded in Grok Build."
+description: "How to build an artist portfolio website and AI Art archive: the rooms, catalog and live sale marks behind a real 440+ work site, vibe coded in Grok Build."
 target_keyword: "how to build an artist portfolio website"
 secondary_keywords:
   - "build portfolio website with ai"
@@ -20,7 +20,7 @@ updated: "2026-10-27T09:54:51-05:00"
 
 Most artist portfolio websites end up as one of three things: a nicer link page, a marketplace profile pretending to be a museum, or a grid that falls apart when you add video. The AI artist behind [circularsurrealism.com](https://circularsurrealism.com) wanted none of them: "Not a Linktree. Not a grid that dies when you add video."
 
-This article is how that portfolio and AI Art archive was built. Slowfreeze, an AI artist since 2022, vibe coded it in Grok Build over about 8 weeks and 396 prompts, by describing it, checking the live preview, and sending screenshots until it was right. The site now holds 439 works in 27 collections across four chains, with live listings, a sales ledger, a print shop, a gallery and a zoom view. That makes it an AI Art archive as much as a portfolio: a portfolio shows a selection of the best pieces, while this site keeps every work, each with its collection, year, edition and the links to where it can be bought. The examples are from an AI and on-chain artist, but the structure fits any artist with a body of work spread across platforms: painters, photographers, illustrators, musicians.
+This article is how that portfolio and AI Art archive was built. Slowfreeze, an AI artist since 2022, vibe coded it in Grok Build over about 8 weeks and 400+ prompts, by describing it, checking the live preview, and sending screenshots until it was right. The site now holds 440+ works in 27 collections across four chains, with live listings, a sales ledger, a print shop, a gallery and a zoom view. That makes it an AI Art archive as much as a portfolio: a portfolio shows a selection of the best pieces, while this site keeps every work, each with its collection, year, edition and the links to where it can be bought. The examples are from an AI and on-chain artist, but the structure fits any artist with a body of work spread across platforms: painters, photographers, illustrators, musicians.
 
 ![Collection rooms and the prints room on circularsurrealism.com](visuals/s3-rooms.png)
 
@@ -122,7 +122,7 @@ If you are starting out, the order is the same as in [How to build a website wit
 
 ### Can you build an artist portfolio website with AI?
 
-Yes. This one was vibe coded in Grok Build: the artist described each room, looked at the live preview, and said what was wrong until it was right. It took about 8 weeks and 396 prompts.
+Yes. This one was vibe coded in Grok Build: the artist described each room, looked at the live preview, and said what was wrong until it was right. It took about 8 weeks and 400+ prompts.
 
 ### What is the best way to show video work on a portfolio site?
 
