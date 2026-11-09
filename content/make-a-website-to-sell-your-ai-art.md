@@ -127,7 +127,7 @@ The catalog, collection pages and shop, the live marks and the optional Web3 roo
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 102 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 107 lessons
 
 {{FOUNDING_PRICE_LINE}}
 

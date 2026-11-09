@@ -139,7 +139,7 @@ The whole wallet room, lesson by lesson with the prompts, is in **The House Guid
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 102 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 107 lessons
 
 {{FOUNDING_PRICE_LINE}}
 

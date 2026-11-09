@@ -128,7 +128,7 @@ The full method, with every module of the real build, 18 reusable prompts, and t
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 102 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 107 lessons
 
 {{FOUNDING_PRICE_LINE}}
 
