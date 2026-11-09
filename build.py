@@ -145,7 +145,7 @@ def founding_text():
 
 TIERS = [
     {"key": "guide", "name": "The House Guide", "price": "$39", "featured": True, "badge": "Most complete",
-     "points": ["20 modules, 102 written lessons", "126-page PDF + EPUB",
+     "points": ["21 modules, 107 written lessons", "132-page PDF + EPUB",
                 "Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI",
                 "Prompt library (18 prompts), troubleshooting playbook, build diary", "30-day refund"],
      "button": "Get The House Guide"},
@@ -308,7 +308,7 @@ def home_graph():
          "alternateName": "Circular Surrealism · Build Notes", "inLanguage": cfg["lang"],
          "publisher": {"@id": ORG_ID}, "author": {"@id": PERSON_ID}},
         {"@type": "Organization", "@id": ORG_ID, "name": cfg["site_name"], "url": f"{HUB}/", "logo": LOGO,
-         "description": "Vibe coding guides and free build notes from one real 396-prompt website build: circularsurrealism.com. No coding experience necessary.",
+         "description": "Vibe coding guides and free build notes from one real 400+ prompt website build: circularsurrealism.com. No coding experience necessary.",
          "founder": {"@id": PERSON_ID}, "parentOrganization": {"@id": "https://circularsurrealism.com/#studio"},
          "sameAs": ["https://x.com/SlowfreezeBuild", "https://slowfreezebuilds.gumroad.com/", "https://www.pinterest.com/slowfreezebuilds/"]},
         {"@type": "Person", "@id": PERSON_ID, "name": cfg["author"], "url": ABOUT_URL, "sameAs": PERSON_SAMEAS},
@@ -317,7 +317,7 @@ def home_graph():
 
 AUTHOR_BOX = f"""<aside class="author-box" aria-label="About the author">
 <p class="author-eyebrow">About the author</p>
-<p><strong>Slowfreeze</strong> is an AI artist and the creator of Circular Surrealism, making AI Art since 2022. He vibe coded <a href="{cfg['art_site_url']}" rel="noopener">circularsurrealism.com</a> himself in Grok Build over about 8 weeks and 396 prompts, and shares what that build taught him here, as Slowfreeze Builds.</p>
+<p><strong>Slowfreeze</strong> is an AI artist and the creator of Circular Surrealism, making AI Art since 2022. He vibe coded <a href="{cfg['art_site_url']}" rel="noopener">circularsurrealism.com</a> himself in Grok Build over about 8 weeks and 400+ prompts, and shares what that build taught him here, as Slowfreeze Builds.</p>
 <p class="author-links"><a href="{ABOUT_URL}" rel="noopener">About Slowfreeze</a> · <a href="https://x.com/Slowfreeze98" rel="noopener">@Slowfreeze98 on X</a> · <a href="https://x.com/SlowfreezeBuild" rel="noopener">@SlowfreezeBuild on X</a></p>
 </aside>
 """
