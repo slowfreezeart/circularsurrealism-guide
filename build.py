@@ -34,7 +34,7 @@ def sync():
         if md.name.lower() == "readme.md":
             continue
         shutil.copy2(md, CONTENT / md.name)
-        for ref in set(re.findall(r"visuals/([\w.-]+\.png)", md.read_text())):
+        for ref in set(re.findall(r"visuals/([\w.-]+\.(?:png|jpg|jpeg))", md.read_text(), flags=re.I)):
             src = VISUALS / ref
             if src.exists():
                 shutil.copy2(src, ASSETS_SRC / ref)
