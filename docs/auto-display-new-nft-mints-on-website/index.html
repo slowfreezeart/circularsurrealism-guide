@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Auto-Display New NFT Mints on Your Website</title>
+<meta name="description" content="How one AI Art site auto-displays new Ethereum and Tezos NFT mints: contract map, dedupe, 10-minute cache, and the bugs that taught the rules.">
+<link rel="canonical" href="https://guide.circularsurrealism.com/auto-display-new-nft-mints-on-website/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Slowfreeze Builds">
+<meta property="og:title" content="Auto-Display New NFT Mints on Your Website">
+<meta property="og:description" content="How one AI Art site auto-displays new Ethereum and Tezos NFT mints: contract map, dedupe, 10-minute cache, and the bugs that taught the rules.">
+<meta property="og:url" content="https://guide.circularsurrealism.com/auto-display-new-nft-mints-on-website/">
+<meta property="og:image" content="https://guide.circularsurrealism.com/assets/og/auto-display-new-nft-mints-on-website.jpg">
+<meta name="twitter:image" content="https://guide.circularsurrealism.com/assets/og/auto-display-new-nft-mints-on-website.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Auto-Display New NFT Mints on Your Website">
+<meta name="twitter:description" content="How one AI Art site auto-displays new Ethereum and Tezos NFT mints: contract map, dedupe, 10-minute cache, and the bugs that taught the rules.">
+<meta name="theme-color" content="#0d0b08">
+<meta name="p:domain_verify" content="8b572280ec21d7344ce35e3d0566f415"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/circular-surrealism-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://guide.circularsurrealism.com/auto-display-new-nft-mints-on-website/#article", "headline": "How to auto-display new NFT mints on your website: one sync, five places, real bugs", "description": "How one AI Art site auto-displays new Ethereum and Tezos NFT mints: contract map, dedupe, 10-minute cache, and the bugs that taught the rules.", "mainEntityOfPage": "https://guide.circularsurrealism.com/auto-display-new-nft-mints-on-website/", "author": {"@type": "Person", "@id": "https://circularsurrealism.com/#slowfreeze", "name": "Slowfreeze", "url": "https://circularsurrealism.com/about", "sameAs": ["https://x.com/Slowfreeze98", "https://www.transient.xyz/@slowfreeze", "https://opensea.io/Slowfreeze"]}, "publisher": {"@type": "Organization", "@id": "https://guide.circularsurrealism.com/#org", "name": "Slowfreeze Builds", "logo": {"@type": "ImageObject", "url": "https://guide.circularsurrealism.com/circular-surrealism-icon.png"}}, "isPartOf": {"@id": "https://guide.circularsurrealism.com/#website"}, "about": {"@id": "https://circularsurrealism.com/#website"}, "image": "https://guide.circularsurrealism.com/assets/og/auto-display-new-nft-mints-on-website.jpg", "datePublished": "2026-11-16T10:21:39-06:00", "dateModified": "2026-11-16T10:21:39-06:00"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap">
+<a class="brand" href="/"><svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="14.25" stroke="currentColor" stroke-width="0.75"></circle><circle cx="16" cy="16" r="9.5" stroke="currentColor" stroke-width="0.75" opacity="0.7"></circle><circle cx="16" cy="16" r="4.5" stroke="currentColor" stroke-width="0.9"></circle><circle cx="16" cy="16" r="1.4" fill="currentColor"></circle></svg><span><span class="wordmark">Slowfreeze Builds</span></span></a>
+<nav><a href="/">Articles</a><a href="https://circularsurrealism.com" rel="noopener">The site</a></nav>
+</div></header>
+<main id="main" class="wrap article">
+<p class="eyebrow"><a href="/">Slowfreeze Builds</a> · Case study: circularsurrealism.com</p>
+<h1>How to auto-display new NFT mints on your website: one sync, five places, real bugs</h1>
+<p class="dek">How one AI Art site auto-displays new Ethereum and Tezos NFT mints: contract map, dedupe, 10-minute cache, and the bugs that taught the rules.</p>
+<div class="prose">
+<p>Every new mint used to mean opening the catalog by hand. Add the piece, wire its collection, check five places, publish. On <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, that stopped. One mint-sync now picks up new Ethereum and Tezos mints and puts them where a hand-added piece already goes.</p>
+<aside class="tier-bar" aria-label="The guides"><span class="tb-label">The guides</span><a class="tb-item tb-main" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">The House Guide <b>$29 <s>$39</s></b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Quick Start <b>$19</b></a><a class="tb-item" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Checklist <b>Free</b></a><a class="tb-more" href="#guides">Compare &darr;</a><span class="tb-founding">$29 founding price for the first 50 buyers, code FOUNDING50</span></aside>
+
+<p>This is the real build story from 6 November 2026: what was reused, what broke, and the checks that proved it. The case-study site holds <strong>440+ works in 27 collections</strong>, vibe coded over <strong>400+ prompts</strong>.</p>
+<figure><img src="/assets/img/cover-auto-mints-1600.webp" srcset="/assets/img/cover-auto-mints-900.webp 900w, /assets/img/cover-auto-mints-1600.webp 1200w" sizes="(max-width: 820px) 100vw, 820px" width="1200" height="630" alt="I Stopped Adding New Mints by Hand. The Site Catches Them Now." decoding="async"><figcaption>I Stopped Adding New Mints by Hand. The Site Catches Them Now.</figcaption></figure>
+<h2 id="what-does-auto-display-mean-here">What does "auto-display" mean here?</h2>
+<p>Not a second inventory. The site already had a path for a hand-added piece. Sync extends that path.</p>
+<p>When a new mint is picked up, it reaches the same destinations a hand-added piece reaches:</p>
+<ol>
+<li>Its collection card</li>
+<li>Latest from the studio (animated card when the media is animated)</li>
+<li>The Activity ledger, with the real on-chain mint time when the explorer has it</li>
+<li>Recent mints</li>
+<li>Its own piece page, with full media</li>
+</ol>
+<p>On top of that, for Based Knights, Based Knights • Short Films, Mystic Orbs and Mystic Orbs • Short Films, the mint is also added to the home hero. The hero stays curated: nothing is pushed out, and the first slide stays a still image.</p>
+<p>If the explorer has not indexed the mint yet, the piece can still appear, and the mint time fills in on a later check.</p>
+<h2 id="start-from-the-hand-added-path-do-not-build-a-second-system">Start from the hand-added path, do not build a second system</h2>
+<p>The first sync, around 4:15 PM CT on 6 November, covered Based Knights Ethereum contracts only. It checked about every 10 minutes and on visit. Tokens already in the catalog were skipped, so a repeat run was safe.</p>
+<p>Files that path already touched included the catalog, the knights and listings APIs, knight-sync, the site shell, collection pages, piece pages, Collect and the atlas. The lesson was written into the next prompt: generalize that sync. Do not invent a parallel catalog.</p>
+<h2 id="all-chains-sync-ethereum-map-plus-tezos">All-chains sync: Ethereum map plus Tezos</h2>
+<p>Around 5:28 PM CT the all-chains prompt landed. Mint-sync now covers:</p>
+<ul>
+<li>every Ethereum contract in the map</li>
+<li>new contracts minted from the artist's Ethereum wallet (slowfreeze.eth)</li>
+<li>Tezos via TzKT (slowfreeze.tez plus the gallery contract)</li>
+</ul>
+<p>A live pass that day added zero pieces. That was expected: nothing new had minted yet. The dry run still mattered. It skipped three things on purpose: the slowfreeze.tez domain token; Mystic Knights Genesis #17 (no metadata, burned); and extra Harmonious Symphony token numbers for the same edition.</p>
+<h2 id="dedupe-key-chain-contract-tokenid">Dedupe key: chain + contract + tokenId</h2>
+<p>The unique key is chain + contract + tokenId. Hand-added entries win.</p>
+<p>A dedupe test checked pieces that already existed: Ethereal (Tezos #31) and Mystic Orb #57 • Short Film (Ethereum #15). Each still appeared once and stayed unchanged.</p>
+<p>Shared contracts only accept tokens whose creator or first minter is the artist's wallet. Other artists' tokens on the same contract never enter the catalog.</p>
+<h2 id="unknown-contract-show-the-piece-do-not-invent-a-collection">Unknown contract: show the piece, do not invent a collection</h2>
+<p>If a new token's contract is not in the map, the piece still appears in Latest, the Activity ledger, Recent mints and its own page. It does not enter a collection. The sync logs needsRoom so a collection can be assigned later. Adding the contract to the map later moves those pieces in automatically.</p>
+<h2 id="the-hero-stays-curated-and-still-picks-up-the-right-new-mints">The hero stays curated (and still picks up the right new mints)</h2>
+<p>Around 6:40 PM CT the artist asked whether new mints should also enter the hero. Answer: the hero stays curated. New mints from Based Knights, Based Knights • Short Films, Mystic Orbs and Mystic Orbs • Short Films are added on top. Nothing is pushed out. The first slide stays a still image. Tezos pieces and older collections stay out of that auto-hero rule.</p>
+<p>Live check on 9 November 2026: the home hero carousel included <strong>Vortyx • Glitched Knight #4</strong> (Based Knights) among its slides (seen as slide 8 of 73 in a desktop pass).</p>
+<h2 id="cache-and-the-rescan-bug">Cache and the rescan bug</h2>
+<p>A live check around 7:04 PM CT called <code>/api/mints</code> twice, 17 seconds apart, and got different refreshedAt values. Each server was keeping its own memory, so every request could rescan.</p>
+<p>A two-fix prompt around 7:17 PM CT fixed that: one result kept for 10 minutes, in memory and on disk, with <code>s-maxage=600</code> for the CDN. The live site uses that 10-minute sync only.</p>
+<p>By about 7:39 PM CT a live check matched: the same refreshedAt across calls, cache-control <code>public, max-age=0, s-maxage=600</code>, and known edition labels such as Celestial and Cosmic Pie stayed "edition of 5".</p>
+<p>If a chain fails, the last good result stays up. <code>/api/mints</code> returns per-chain ok/added.</p>
+<h2 id="edition-labels-and-the-ens-pitfall">Edition labels and the ENS pitfall</h2>
+<p>ERC-1155 reads totalSupply(tokenId): 1 becomes "1/1", more than 1 becomes "edition of N", and 0 is treated as burned and skipped. ERC-721 is always 1/1.</p>
+<p>The first try swept every ERC-1155 in the wallet and pulled in ENS names and other non-AI-Art tokens. That sweep was taken back out. Lesson: filter to AI Art contracts and the creator wallet, not "everything this wallet ever touched".</p>
+<h2 id="what-still-stays-manual">What still stays manual</h2>
+<ul>
+<li>Base (no new mints there)</li>
+<li>Solana (Mallow)</li>
+<li>Light 720p card loops built at publish time (the card can play the full file until a loop is added)</li>
+<li>The sitemap (a new piece gets in after it is saved to the catalog and published)</li>
+</ul>
+<h2 id="first-real-proof-vortyx">First real proof: Vortyx</h2>
+<p>Verified on 9 November 2026 (America/Chicago) against the live site, <code>/api/mints</code>, phone screenshots from the user, and a headless browser pass:</p>
+<ul>
+<li><strong>Vortyx • Glitched Knight #4</strong> is on Ethereum contract <code>0x93f21bb8462a3485f05fae28c46064d64dd9623b</code>, tokenId <strong>1</strong>, edition <strong>1/1</strong>, clan Glitched</li>
+<li>On-chain mint time <strong>2026-11-08T00:46:47.000000Z</strong> (7 November 2026, 6:46 PM CT), tx <code>0x6c16d226341d1c168695edc351bcdcd1149e375c054d0f8ce8f239296a1aaf21</code></li>
+<li>Piece page live: https://circularsurrealism.com/works/bk-still-eth-1</li>
+<li><strong>Vortyx • Glitched Knight #4 • Short Film</strong> is on Ethereum contract <code>0x12b0ebae8e7ae334bb53d6c4c349e71464e28543</code>, tokenId <strong>1</strong>, piece page https://circularsurrealism.com/works/bk-film-eth-1</li>
+<li>Short Film on-chain mint time 7 November 2026, 7:51:35 PM CT, tx <code>0x3327f0abccd9f421a8bbabf350aadf08c5313623b557bbac054bf66686c5b245</code></li>
+<li>Transient listings exist for both tokens</li>
+<li><code>/api/mints</code> reported ethereum ok with added 2, tezos ok with added 0, <code>every: 10m</code>, empty needsRoom, stable refreshedAt across two calls, cache-control <code>public, max-age=0, s-maxage=600</code></li>
+</ul>
+<p>Where it showed up on the site:</p>
+<ul>
+<li><strong>Home hero:</strong> Vortyx still in the curated carousel (added on top)</li>
+<li><strong>Latest / From the studio:</strong> Vortyx Short Film first; Vortyx still second, listed at 0.0411 ETH</li>
+<li><strong>Activity ledger:</strong> Vortyx in Listed lots at 0.0411 ETH; Recent mints shows Vortyx first</li>
+<li><strong>Based Knights collection:</strong> Vortyx first of <strong>17</strong> works (Ethereum card beside the Base Glitched Knights)</li>
+<li><strong>Piece pages:</strong> both still and Short Film URLs above return 200</li>
+</ul>
+<figure><img src="/assets/img/hero-vortyx-1600.webp" srcset="/assets/img/hero-vortyx-900.webp 900w, /assets/img/hero-vortyx-1600.webp 1280w" sizes="(max-width: 820px) 100vw, 820px" width="1280" height="780" alt="Home hero carousel on desktop with Vortyx • Glitched Knight #4 as the current slide." decoding="async" loading="lazy"><figcaption>Home hero carousel on desktop with Vortyx • Glitched Knight #4 as the current slide.</figcaption></figure>
+<figure><img src="/assets/img/home-from-the-studio-vortyx-1600.webp" srcset="/assets/img/home-from-the-studio-vortyx-900.webp 900w, /assets/img/home-from-the-studio-vortyx-1600.webp 1206w" sizes="(max-width: 820px) 100vw, 820px" width="1206" height="2122" alt="Home page, Latest / From the studio: Vortyx Short Film first, Vortyx still second at 0.0411 ETH." decoding="async" loading="lazy"><figcaption>Home page, Latest / From the studio: Vortyx Short Film first, Vortyx still second at 0.0411 ETH.</figcaption></figure>
+<figure><img src="/assets/img/activity-vortyx-filled-1600.webp" srcset="/assets/img/activity-vortyx-filled-900.webp 900w, /assets/img/activity-vortyx-filled-1600.webp 390w" sizes="(max-width: 820px) 100vw, 820px" width="390" height="844" alt="Activity ledger, Recent mints, with Vortyx first." decoding="async" loading="lazy"><figcaption>Activity ledger, Recent mints, with Vortyx first.</figcaption></figure>
+<figure><img src="/assets/img/ledger-listed-vortyx-1600.webp" srcset="/assets/img/ledger-listed-vortyx-900.webp 900w, /assets/img/ledger-listed-vortyx-1600.webp 1280w" sizes="(max-width: 820px) 100vw, 820px" width="1280" height="900" alt="Activity ledger, Listed lots: Vortyx at 0.0411 ETH on Transient Labs." decoding="async" loading="lazy"><figcaption>Activity ledger, Listed lots: Vortyx at 0.0411 ETH on Transient Labs.</figcaption></figure>
+<figure><img src="/assets/img/based-knights-vortyx-filled-1600.webp" srcset="/assets/img/based-knights-vortyx-filled-900.webp 900w, /assets/img/based-knights-vortyx-filled-1600.webp 390w" sizes="(max-width: 820px) 100vw, 820px" width="390" height="844" alt="Based Knights collection, 17 works, Vortyx first on Ethereum." decoding="async" loading="lazy"><figcaption>Based Knights collection, 17 works, Vortyx first on Ethereum.</figcaption></figure>
+<h2 id="key-steps-if-you-vibe-code-the-same-idea">Key steps if you vibe code the same idea</h2>
+<ol>
+<li>Read how a hand-added piece reaches the site today</li>
+<li>Extend that path; do not build a second system</li>
+<li>Write a contract map plus creator-wallet discovery</li>
+<li>Dedupe on chain + contract + tokenId; let hand-added entries win</li>
+<li>Dry run, then a dedupe test on pieces you already know</li>
+<li>Cache the result for about 10 minutes</li>
+<li>Check live with two calls a few seconds apart</li>
+</ol>
+<h2 id="faq">FAQ</h2>
+<h3 id="can-new-nft-mints-show-on-a-website-without-editing-the-catalog-each-time">Can new NFT mints show on a website without editing the catalog each time?</h3>
+<p>Yes, if you extend the same path a hand-added piece already uses. On the case-study site, mint-sync covers mapped Ethereum contracts, new contracts from the creator wallet, and Tezos via TzKT.</p>
+<h3 id="how-often-does-the-sync-run">How often does the sync run?</h3>
+<p>About every 10 minutes, and on visit, with a 10-minute cached result (<code>s-maxage=600</code>).</p>
+<h3 id="what-if-the-marketplace-has-not-indexed-the-mint-yet">What if the marketplace has not indexed the mint yet?</h3>
+<p>The piece can still appear. The mint time fills in on a later check when the explorer has it.</p>
+<h3 id="does-this-replace-hand-added-pieces">Does this replace hand-added pieces?</h3>
+<p>No. Hand-added entries win on the same chain + contract + tokenId key.</p>
+<h3 id="do-i-need-to-know-how-to-code">Do I need to know how to code?</h3>
+<p>No coding experience necessary. The case-study site was vibe coded in Grok Build.</p>
+<h2 id="go-further">Go further</h2>
+<p>The multi-chain collection pattern that sits next to this sync is written up in the guides, and the whole vibe coding build is in <strong>The House Guide</strong>. <strong>Quick Start</strong> covers planning, performance and publishing.</p>
+<section class="tiers" id="guides" aria-labelledby="guides-h"><p class="tiers-eyebrow">The guides</p><h2 class="tiers-h" id="guides-h">Build your own high-end site with AI</h2><div class="tier-grid"><div class="tier featured"><div class="tier-top"><h3 class="tier-name">The House Guide</h3><span class="tier-badge">Most complete</span></div><p class="tier-price"><span class="now">$29</span><s class="was" aria-label="regular price $39">$39</s></p><p class="tier-founding">$29 founding price for the first 50 buyers, code FOUNDING50</p><ul class="tier-points"><li>21 modules, 107 written lessons</li><li>133-page PDF + EPUB</li><li>Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI</li><li>Prompt library (18 prompts), troubleshooting playbook, build diary</li><li>30-day refund</li></ul><a class="tier-btn primary" href="https://slowfreezebuilds.gumroad.com/l/sjvavd?offer_code=FOUNDING50" rel="noopener">Get The House Guide</a></div><div class="tier-pair"><div class="tier"><div class="tier-top"><h3 class="tier-name">Quick Start</h3></div><p class="tier-price"><span class="now">$19</span></p><ul class="tier-points"><li>7 modules, 39 written lessons</li><li>55-page PDF + EPUB</li><li>Planning and content, the full performance module, publish, domain, backup, launch review</li><li>Prompt library (18 prompts)</li><li>30-day refund</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/kslwf" rel="noopener">Get Quick Start</a></div><div class="tier"><div class="tier-top"><h3 class="tier-name">Performance Checklist</h3></div><p class="tier-price"><span class="now">Free</span></p><ul class="tier-points"><li>12-item checklist</li><li>The full 7-lesson performance module</li><li>13-page PDF</li></ul><a class="tier-btn" href="https://slowfreezebuilds.gumroad.com/l/svpmd" rel="noopener">Get the free checklist</a></div></div></div><p class="tiers-note">Written guides, no coding experience necessary, works with any AI website builder.</p></section>
+
+
+<p><em>Built with Grok. The case-study site was built with Grok Build by SpaceXSI. This article and the guides are independent and are not made, endorsed or sponsored by SpaceXSI.</em></p>
+</div>
+<aside class="author-box" aria-label="About the author">
+<p class="author-eyebrow">About the author</p>
+<p><strong>Slowfreeze</strong> is an AI artist and the creator of Circular Surrealism, making AI Art since 2022. He vibe coded <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a> himself in Grok Build over about 8 weeks and 400+ prompts, and shares what that build taught him here, as Slowfreeze Builds.</p>
+<p class="author-links"><a href="https://circularsurrealism.com/about" rel="noopener">About Slowfreeze</a> · <a href="https://x.com/Slowfreeze98" rel="noopener">@Slowfreeze98 on X</a> · <a href="https://x.com/SlowfreezeBuild" rel="noopener">@SlowfreezeBuild on X</a></p>
+</aside>
+</main>
+<footer class="site-footer"><div class="wrap">
+<p class="credit"><strong>Built with Grok.</strong> The case-study site, <a href="https://circularsurrealism.com" rel="noopener">circularsurrealism.com</a>, was built with Grok Build by xAI. These articles and the guides are independent and are not made, endorsed or sponsored by xAI.</p>
+<p class="small">&copy; Slowfreeze Builds · by Slowfreeze, creator of <a href="https://circularsurrealism.com" rel="noopener">Circular Surrealism</a></p>
+</div></footer>
+<a class="tier-float" href="#guides" hidden>Guides from $19</a>
+<script src="/site.js" defer></script>
+</body></html>
