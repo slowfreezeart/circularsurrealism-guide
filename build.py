@@ -145,9 +145,9 @@ def founding_text():
 
 TIERS = [
     {"key": "guide", "name": "The House Guide", "price": "$39", "featured": True, "badge": "Most complete",
-     "points": ["21 modules, 107 written lessons", "133-page PDF + EPUB",
+     "points": ["21 modules, 114 written lessons", "147-page PDF + EPUB",
                 "Deep dives: live data, live counters, catalog and shop, performance, deep zoom, hero and search, gallery, themes and UI",
-                "Prompt library (18 prompts), troubleshooting playbook, build diary", "30-day refund"],
+                "Prompt library (20 prompts), troubleshooting playbook, build diary", "14-day refund"],
      "button": "Get The House Guide"},
     {"key": "quick", "name": "Quick Start", "price": "$19",
      "points": ["7 modules, 39 written lessons", "55-page PDF + EPUB",

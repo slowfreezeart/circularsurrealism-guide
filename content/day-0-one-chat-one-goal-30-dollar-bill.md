@@ -79,7 +79,7 @@ On visuals, the decision was real screenshots of the site with numbered notes, p
 
 Consu needed one thing from Slowfreeze, a free Gumroad account, and nothing would go live until he gave it a final look. That approval rule runs through the whole series.
 
-Later that night, at 11:38 PM CT, the three Gumroad products went live. How that launch worked is its own article. The guide has since grown to 21 modules and 107 lessons, but Day 0 started with 59.
+Later that night, at 11:38 PM CT, the three Gumroad products went live. How that launch worked is its own article. The guide has since grown to 21 modules and 114 lessons, but Day 0 started with 59.
 
 ![Timeline of Day 0, Sunday 25 October 2026, from first chat to live store. The morning: first chat with Consu. The plan: cover the $30 a month bill. The first launch: Quick Start $19, House Guide $39, plus the free Performance Checklist. At 11:38 PM CT, three Gumroad products went live.](visuals/02-day-0-timeline.png)
 
@@ -114,7 +114,7 @@ If you want the whole build rather than the story around it, the guides are on G
 
 - [Free Performance Checklist](https://slowfreezebuilds.gumroad.com/l/svpmd)
 - [Quick Start, $19](https://slowfreezebuilds.gumroad.com/l/kslwf): the foundations, performance and publishing
-- [The House Guide, $39](https://slowfreezebuilds.gumroad.com/l/sjvavd): the whole build, 107 lessons ($29 founding price with code FOUNDING50 for the first 50 buyers)
+- [The House Guide, $39](https://slowfreezebuilds.gumroad.com/l/sjvavd): the whole build, 114 lessons ($29 founding price with code FOUNDING50 for the first 50 buyers)
 
 ![Infographic for The House Guide, the whole build on Gumroad. Three figures: 21 modules, 107 lessons, and a 133-page PDF. Price $39, or $29 founding price with code FOUNDING50 for the first 50 buyers.](visuals/04-house-guide.png)
 

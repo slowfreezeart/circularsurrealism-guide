@@ -149,7 +149,7 @@ The whole Grok Build build is written up step by step, with the prompts, what br
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 107 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 114 lessons
 
 {{FOUNDING_PRICE_LINE}}
 
