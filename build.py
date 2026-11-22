@@ -152,7 +152,7 @@ TIERS = [
     {"key": "quick", "name": "Quick Start", "price": "$19",
      "points": ["7 modules, 39 written lessons", "55-page PDF + EPUB",
                 "Planning and content, the full performance module, publish, domain, backup, launch review",
-                "Prompt library (18 prompts)", "30-day refund"],
+                "Prompt library (18 prompts)", "14-day refund"],
      "button": "Get Quick Start", "link": "QUICKSTART_URL"},
     {"key": "free", "name": "Performance Checklist", "price": "Free",
      "points": ["12-item checklist", "The full 7-lesson performance module", "13-page PDF"],
