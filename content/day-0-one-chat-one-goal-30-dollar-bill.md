@@ -116,6 +116,6 @@ If you want the whole build rather than the story around it, the guides are on G
 - [Quick Start, $19](https://slowfreezebuilds.gumroad.com/l/kslwf): the foundations, performance and publishing
 - [The House Guide, $39](https://slowfreezebuilds.gumroad.com/l/sjvavd): the whole build, 115 lessons ($29 founding price with code FOUNDING50 for the first 50 buyers)
 
-![Infographic for The House Guide, the whole build on Gumroad. Three figures: 21 modules, 107 lessons, and a 133-page PDF. Price $39, or $29 founding price with code FOUNDING50 for the first 50 buyers.](visuals/04-house-guide.png)
+![Infographic for The House Guide, the whole build on Gumroad. Three figures: 21 modules, 115 lessons, and a 152-page PDF. Price $39, or $29 founding price with code FOUNDING50 for the first 50 buyers.](visuals/04-house-guide.png)
 
 *Built with Grok. The case-study site was built with Grok Build by SpaceXSI. This article and the guides are independent and are not made, endorsed or sponsored by SpaceXSI.*
