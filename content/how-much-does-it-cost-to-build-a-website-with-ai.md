@@ -107,7 +107,7 @@ The whole build, and the habits that keep the credit bill down, are written up i
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 114 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 115 lessons
 
 {{FOUNDING_PRICE_LINE}}
 

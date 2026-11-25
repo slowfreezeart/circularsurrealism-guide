@@ -165,7 +165,7 @@ The multi-chain collection pattern that sits next to this sync is written up in 
 
 - [Free performance checklist]({{CHECKLIST_URL}})
 - [Quick Start, $19]({{QUICKSTART_URL}}): foundation, performance and publishing, 39 lessons
-- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 114 lessons
+- [The House Guide, $39]({{GUIDE_URL}}): the whole build, 115 lessons
 
 {{FOUNDING_PRICE_LINE}}
 
